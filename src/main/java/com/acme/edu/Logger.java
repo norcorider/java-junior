@@ -24,7 +24,13 @@ public class Logger {
      */
 
     //dfgdgfdg
-    public static void logMySuperMessage(int foramlMessage) {
+
+
+    public static String log(int... a) {
+        return null;
+    }
+
+    public static void log(int foramlMessage) {
         foramlMessage = 2;
         int local = 0; //temp, stack, auto
 
@@ -42,7 +48,6 @@ public class Logger {
      * <bold>kfdfgjkhdgjfdhg</bold>
      *
      * @param message РАПРапрдлпао апдлапорда рдаплро
-     * @throws апорвл лопрл лорло
      */
     public static void log(byte message) {
         System.out.println("primitive: " + message);
@@ -51,15 +56,15 @@ public class Logger {
     /**
      * public API
      */
-    public static void logString(String message) {
+    public static void log(String message) {
         System.out.println(message);
     }
 
 
-    public static void main(String[] args) {
+    public static void main(String... args) {
         int local = 0;
         //kdjfhgkjfgh
-        logString("HW!!!");
+        log(1);
 //        Main.main();
 //        Main.counter = 1;
     }
@@ -87,7 +92,6 @@ class Main {
         int factualMessage = 1;
         Object o = new Object();
 
-        logMySuperMessage(1);
         System.out.println(factualMessage);
     }
 }
