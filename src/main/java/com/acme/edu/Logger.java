@@ -18,29 +18,65 @@ public class Logger {
     public static int globalState = 0;
     public int instanceState = 0;
 
-    /*
-    xlkvhjkg
-    лаорслиормс
-     */
+    public static String ClassName = "";
+    public static final String PRIM= "primitive: ";
 
-    //dfgdgfdg
-
-
-    public static String log(int... a) {
-        return null;
+    public static void log(byte foramlMessage) {
+        String etalon = (new Byte(foramlMessage)).getClass().toString();
+        if(!ClassName.equals(etalon)) {
+            ClassName = etalon;
+            System.out.println(PRIM+"\r\n" + foramlMessage);
+        }else {
+            System.out.println(foramlMessage);
+        }
+    }
+    public static void log(int foramlMessage) {
+        /*String etalon = (new Integer(foramlMessage)).getClass().toString();
+        if(!ClassName.equals(etalon)) {
+            ClassName = etalon;
+            System.out.println("primitive: \r\n" + foramlMessage);
+        }else {
+            System.out.println(foramlMessage);
+        }*/
+        System.out.print(PRIM + foramlMessage+"\r\n");
+    }
+    public static void log(char foramlMessage) {
+        String etalon = (new Character(foramlMessage)).getClass().toString();
+        if(!ClassName.equals(etalon)) {
+            ClassName = etalon;
+            System.out.println("char: \r\n" + foramlMessage);
+        }else {
+            System.out.println(foramlMessage);
+        }
+    }
+    public static void log(String foramlMessage) {
+        String etalon = (new String(foramlMessage)).getClass().toString();
+        if(!ClassName.equals(etalon)) {
+            ClassName = etalon;
+            System.out.println("string: \r\n" + foramlMessage);
+        }else {
+            System.out.println(foramlMessage);
+        }
     }
 
-    public static void log(int foramlMessage) {
-        foramlMessage = 2;
-        int local = 0; //temp, stack, auto
+    public static void log(Object obj) {
+        String etalon = obj.getClass().toString();
+        if(!ClassName.equals(etalon)) {
+            ClassName = etalon;
+            System.out.println("reference: \r\n" + '@');
+        }else {
+            System.out.println('@');
+        }
+    }
 
-        System.out.println("imits " + foramlMessage);
-        System.out.println("prits " + foramlMessage);
-//        System.out.println("prits " + foramlMessage);
-        System.out.println("primits " + foramlMessage);
-        System.out.println("prits " + foramlMessage);
-        System.out.println("pmits " + foramlMessage);
-        System.out.println("primits " + foramlMessage);
+    public static void log(boolean foramlMessage) {
+        String etalon = new Boolean(foramlMessage).getClass().toString();
+        if(!ClassName.equals(etalon)) {
+            ClassName = etalon;
+            System.out.println("primitive: \r\n" + foramlMessage);
+        }else {
+            System.out.println(foramlMessage);
+        }
     }
 
     /**
@@ -49,27 +85,29 @@ public class Logger {
      *
      * @param message РАПРапрдлпао апдлапорда рдаплро
      */
-    public static void log(byte message) {
+    /*public static void log(byte message) {
         System.out.println("primitive: " + message);
-    }
+    }*/
 
     /**
      * public API
      */
-    public static void log(String message) {
+   /* public static void log(String message) {
         System.out.println(message);
-    }
+    }*/
 
 
     public static void main(String... args) {
         int local = 0;
         //kdjfhgkjfgh
         log(1);
+
+        System.out.println(new String("").getClass().toString());
 //        Main.main();
 //        Main.counter = 1;
     }
 }
-
+/*
 class Main {
     public static int counter = 0;
 
@@ -85,6 +123,7 @@ class Main {
     /**
      * java -Xss2m -Xms4G -Xmx4G
      */
+/*
     public static void main(String[] args) {
         int local = 0;
         main(new String[] {});
@@ -95,3 +134,4 @@ class Main {
         System.out.println(factualMessage);
     }
 }
+*/
