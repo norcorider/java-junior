@@ -6,6 +6,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+
 import java.io.*;
 
 public class LoggerTest implements SysoutCaptureAndAssertionAbility {
@@ -25,9 +26,11 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
     @Test
     public void shouldLogInteger() throws IOException {
 
-       Logger.log(1);
-       Logger.log(0);
-       Logger.log(-1);
+        //region when
+        Logger.log(1);
+        Logger.log(0);
+        Logger.log(-1);
+        //endregion
 
 
         //region then
@@ -53,7 +56,7 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
     }
 
 
-    //TODO: implement Logger solution to match specification as tests
+
 
     @Test
     public void shouldLogChar() throws IOException {
@@ -111,4 +114,3 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
         //endregion
     }
 
-}
