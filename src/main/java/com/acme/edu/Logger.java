@@ -287,6 +287,7 @@ public class Logger {
         }
         System.out.println(arr[arr.length-1]+"}");
     }
+
     public static void main(String... args) {
 
     }
