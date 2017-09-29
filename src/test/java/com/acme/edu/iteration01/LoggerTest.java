@@ -27,10 +27,12 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
     public void shouldLogInteger() throws IOException {
 
         //region when
+
         Logger.log(-1);
         Logger.log(2);
         Logger.log(3);
         Logger.close();
+
         //endregion
 
 
@@ -43,6 +45,7 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
     @Test
     public void shouldLogByte() throws IOException {
         //region when
+
         Logger.log((byte) 1);
         Logger.log((byte) 0);
         Logger.log((byte) -1);
@@ -53,6 +56,7 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
         assertSysoutContains("0");
         //endregion
     }
+
 
 
     @Test
@@ -68,6 +72,7 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
         assertSysoutContains("b");
         //endregion
     }
+
 
 
     @Test

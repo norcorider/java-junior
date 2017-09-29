@@ -2,6 +2,8 @@ package com.acme.edu;
 
 public class Logger {
     public static final String MY_SUPER_CONSTANT = "";
+    private static final String PRIMITIVE_PREFIX = "primitive: ";
+    private static final String CHAR_PREFIX = "char: ";
 
     public static int globalState = 0;
     public int instanceState = 0;
@@ -15,6 +17,7 @@ public class Logger {
     public static byte sumByte = 0;
     public static byte ByteBOUND = 0;
 
+
     public static String resultString="";
     public static int EqStringCounter = 0;
 
@@ -27,6 +30,7 @@ public class Logger {
             System.out.println(string + " (x" +etalonCounter+ ")");
         else if(etalonCounter > 0)
             System.out.println(string);
+
 
     }
     public static void log(byte foramlMessage) {
@@ -89,6 +93,7 @@ public class Logger {
             }
         }
         state = 1;
+
 
     }
     public static void log(int foramlMessage) {
