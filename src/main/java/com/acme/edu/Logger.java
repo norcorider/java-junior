@@ -1,18 +1,5 @@
 package com.acme.edu;
 
-import java.io.File;
-
-import static com.acme.edu.Logger.*;
-import static java.io.File.createTempFile;
-import static java.io.File.separator;
-import java.io.File;
-import static java.lang.Math.abs;
-import static java.lang.Math.cos;
-import static java.lang.Math.sin;
-
-/**
- * Java Coding Style Convention (PDF)
- */
 public class Logger {
     public static final String MY_SUPER_CONSTANT = "";
 
@@ -234,24 +221,14 @@ public class Logger {
         {
             case 1:
             {
-                /*if(ByteBOUND!=0)
-                {
-                    System.out.println((byte)(sumByte - ByteBOUND));
-                    System.out.println((byte)ByteBOUND);
-                }
-                else*/
-                    System.out.println((byte)sumByte);
+
+                System.out.println((byte)sumByte);
                 break;
             }
             case 2:
             {
-                /*if(IntegerBOUND!=0)
-                {
-                    System.out.println(sumInt - IntegerBOUND);
-                    System.out.println(IntegerBOUND);
-                }
-                else*/
-                    System.out.println(sumInt);
+
+                System.out.println(sumInt);
                 break;
             }
             case 3:
@@ -309,88 +286,6 @@ public class Logger {
             System.out.println(foramlMessage);
         }
     }
-
-    /**
-     * JavaDoc
-     * <bold>kfdfgjkhdgjfdhg</bold>
-     *
-     * @param message РАПРапрдлпао апдлапорда рдаплро
-     */
-    /*public static void log(byte message) {
-        System.out.println("primitive: " + message);
-    }*/
-
-    /**
-     * public API
-     */
-   /* public static void log(String message) {
-        System.out.println(message);
-    }*/
-
-
     public static void main(String... args) {
-        Logger.log("str 1");
-        Logger.log(1);
-        Logger.log(2);
-        Logger.log("str 2");
-        Logger.log(0);
-        Logger.close();
-        Logger.log("str 1");
-        Logger.log(10);
-        Logger.log(Integer.MAX_VALUE);
-        Logger.log(Integer.MIN_VALUE);
-        Logger.log(Integer.MAX_VALUE);
-        Logger.log(Integer.MAX_VALUE);
-        Logger.log(Integer.MAX_VALUE);
-        Logger.log(Integer.MAX_VALUE);
-        Logger.log("str 2");
-        Logger.log(0);
-        Logger.close();
-        Logger.log("str 1");
-        Logger.log((byte)10);
-        Logger.log((byte)Byte.MAX_VALUE);
-        Logger.log("str 2");
-        Logger.log(0);
-        Logger.close();
-        Logger.log("str 1");
-        Logger.log("str 2");
-        Logger.log("str 2");
-        Logger.log(0);
-        Logger.log("str 2");
-        Logger.log("str 3");
-        Logger.log("str 3");
-        Logger.log("str 3");
-        Logger.close();
-
-//        Main.main();
-//        Main.counter = 1;
     }
 }
-/*
-class Main {
-    public static int counter = 0;
-
-    static {
-        System.out.println("Hello!");
-        counter = 1;
-    }
-
-    public void m() {
-
-    }
-
-    /**
-     * java -Xss2m -Xms4G -Xmx4G
-     */
-/*
-    public static void main(String[] args) {
-        int local = 0;
-        main(new String[] {});
-
-        int factualMessage = 1;
-        Object o = new Object();
-
-        System.out.println(factualMessage);
-    }
-}
-*/
