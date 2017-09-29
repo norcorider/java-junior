@@ -1,18 +1,5 @@
 package com.acme.edu;
 
-import java.io.File;
-
-import static com.acme.edu.Logger.*;
-import static java.io.File.createTempFile;
-import static java.io.File.separator;
-import java.io.File;
-import static java.lang.Math.abs;
-import static java.lang.Math.cos;
-import static java.lang.Math.sin;
-
-/**
- * Java Coding Style Convention (PDF)
- */
 public class Logger {
     public static final String MY_SUPER_CONSTANT = "";
 
@@ -300,32 +287,6 @@ public class Logger {
         }
     }
     public static void main(String... args) {
-        Logger.log("str 1");
-        Logger.log(1);
-        Logger.log(2);
-        Logger.log("str 2");
-        Logger.log(0);
-        Logger.close();
-        Logger.log("str 1");
-        Logger.log(10);
-        Logger.log(Integer.MAX_VALUE);
-        Logger.log("str 2");
-        Logger.log(0);
-        Logger.close();
-        Logger.log("str 1");
-        Logger.log((byte)10);
-        Logger.log((byte)Byte.MAX_VALUE);
-        Logger.log("str 2");
-        Logger.log(0);
-        Logger.close();
-        Logger.log("str 1");
-        Logger.log("str 2");
-        Logger.log("str 2");
-        Logger.log(0);
-        Logger.log("str 2");
-        Logger.log("str 3");
-        Logger.log("str 3");
-        Logger.log("str 3");
-        Logger.close();
+
     }
 }
