@@ -20,6 +20,7 @@ public class Logger {
 
     public static String ClassName = "";
     public static final String PRIM= "primitive: ";
+    public static final String PRIMArr= "primitives array: ";
 
     public static void printString(String string, int etalonCounter)
     {
@@ -29,6 +30,16 @@ public class Logger {
             System.out.println(string);
 
     }
+    public static void log(int[] arr)
+    {
+        System.out.print(PRIMArr+"{");
+        for (int i = 0; i < arr.length-1; i++) {
+            System.out.print(arr[i]+", ");
+        }
+        System.out.println(arr[arr.length-1]+"}");
+    }
+
+
     public static void log(byte foramlMessage) {
         switch(state)
         {
@@ -152,6 +163,7 @@ public class Logger {
         }
         state = 2;
     }
+
     public static void log(String foramlMessage) {
         switch(state)
         {
@@ -287,5 +299,6 @@ public class Logger {
         }
     }
     public static void main(String... args) {
+        Logger.log(new int[]{1,0,-1});
     }
 }
