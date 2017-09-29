@@ -1,6 +1,5 @@
 package com.acme.edu;
 
-
 import java.io.File;
 
 import static com.acme.edu.Logger.*;
@@ -11,9 +10,10 @@ import static java.lang.Math.abs;
 import static java.lang.Math.cos;
 import static java.lang.Math.sin;
 
-
+/**
+ * Java Coding Style Convention (PDF)
+ */
 public class Logger {
-
     public static final String MY_SUPER_CONSTANT = "";
 
     public static int globalState = 0;
@@ -42,10 +42,8 @@ public class Logger {
             System.out.println(string);
 
     }
-
     public static void log(byte foramlMessage) {
         switch(state)
-
         {
             case 1://byte
             {
@@ -108,7 +106,6 @@ public class Logger {
     }
     public static void log(int foramlMessage) {
         switch(state)
-
         {
             case 1://byte
             {
@@ -237,12 +234,24 @@ public class Logger {
         {
             case 1:
             {
-                    System.out.println((byte)sumByte);
+                /*if(ByteBOUND!=0)
+                {
+                    System.out.println((byte)(sumByte - ByteBOUND));
+                    System.out.println((byte)ByteBOUND);
+                }
+                else*/
+                System.out.println((byte)sumByte);
                 break;
             }
             case 2:
             {
-                    System.out.println(sumInt);
+                /*if(IntegerBOUND!=0)
+                {
+                    System.out.println(sumInt - IntegerBOUND);
+                    System.out.println(IntegerBOUND);
+                }
+                else*/
+                System.out.println(sumInt);
                 break;
             }
             case 3:
@@ -301,6 +310,23 @@ public class Logger {
         }
     }
 
+    /**
+     * JavaDoc
+     * <bold>kfdfgjkhdgjfdhg</bold>
+     *
+     * @param message РАПРапрдлпао апдлапорда рдаплро
+     */
+    /*public static void log(byte message) {
+        System.out.println("primitive: " + message);
+    }*/
+
+    /**
+     * public API
+     */
+   /* public static void log(String message) {
+        System.out.println(message);
+    }*/
+
 
     public static void main(String... args) {
         Logger.log("str 1");
@@ -330,7 +356,36 @@ public class Logger {
         Logger.log("str 3");
         Logger.log("str 3");
         Logger.close();
+
+//        Main.main();
+//        Main.counter = 1;
     }
 }
+/*
+class Main {
+    public static int counter = 0;
 
+    static {
+        System.out.println("Hello!");
+        counter = 1;
+    }
 
+    public void m() {
+
+    }
+
+    /**
+     * java -Xss2m -Xms4G -Xmx4G
+     */
+/*
+    public static void main(String[] args) {
+        int local = 0;
+        main(new String[] {});
+
+        int factualMessage = 1;
+        Object o = new Object();
+
+        System.out.println(factualMessage);
+    }
+}
+*/
