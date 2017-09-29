@@ -234,23 +234,13 @@ public class Logger {
         {
             case 1:
             {
-                /*if(ByteBOUND!=0)
-                {
-                    System.out.println((byte)(sumByte - ByteBOUND));
-                    System.out.println((byte)ByteBOUND);
-                }
-                else*/
+
                 System.out.println((byte)sumByte);
                 break;
             }
             case 2:
             {
-                /*if(IntegerBOUND!=0)
-                {
-                    System.out.println(sumInt - IntegerBOUND);
-                    System.out.println(IntegerBOUND);
-                }
-                else*/
+
                 System.out.println(sumInt);
                 break;
             }
@@ -309,25 +299,6 @@ public class Logger {
             System.out.println(foramlMessage);
         }
     }
-
-    /**
-     * JavaDoc
-     * <bold>kfdfgjkhdgjfdhg</bold>
-     *
-     * @param message РАПРапрдлпао апдлапорда рдаплро
-     */
-    /*public static void log(byte message) {
-        System.out.println("primitive: " + message);
-    }*/
-
-    /**
-     * public API
-     */
-   /* public static void log(String message) {
-        System.out.println(message);
-    }*/
-
-
     public static void main(String... args) {
         Logger.log("str 1");
         Logger.log(1);
@@ -356,36 +327,5 @@ public class Logger {
         Logger.log("str 3");
         Logger.log("str 3");
         Logger.close();
-
-//        Main.main();
-//        Main.counter = 1;
     }
 }
-/*
-class Main {
-    public static int counter = 0;
-
-    static {
-        System.out.println("Hello!");
-        counter = 1;
-    }
-
-    public void m() {
-
-    }
-
-    /**
-     * java -Xss2m -Xms4G -Xmx4G
-     */
-/*
-    public static void main(String[] args) {
-        int local = 0;
-        main(new String[] {});
-
-        int factualMessage = 1;
-        Object o = new Object();
-
-        System.out.println(factualMessage);
-    }
-}
-*/
