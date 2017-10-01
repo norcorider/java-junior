@@ -18,7 +18,7 @@ public class LoggerController {
     private int mode;
     private int deltaI;
     private byte deltaB;
-    private String deltaS;
+    private String str;
 
     ArrayList setofAcc;
     private String log;
@@ -28,7 +28,8 @@ public class LoggerController {
         mode = 0;
         deltaI = 0;
         deltaB = 0;
-        deltaS = "";
+        //deltaS = "";
+        log = "";
         setofAcc = new ArrayList<LoggerAccumulate>();
         setofAcc.add(new ByteAcc());
         setofAcc.add(new IntAcc());
@@ -38,7 +39,7 @@ public class LoggerController {
 
 
     public void setDS(String DS) {
-        this.deltaS = DS;
+        this.str = DS;
     }
 
     public void setDB(byte DB) {
@@ -53,36 +54,79 @@ public class LoggerController {
 
     public void LoggingProcess(int mode)
     {
-        switch(this.mode)//старое состояние
-        {
-            case 1:
-            {
-                TargetAcc = (ByteAcc)setofAcc.get(0);
+        //region Флаг
+        switch(this.mode) {
+            case 1: {
+                if(mode == 1)
+                {
+                    TargetAcc.accumulate(1);
+                }else{
+                    log += TargetAcc.accumulate(2)+"\n";
+                }
+                TargetAcc.setDeltaB(deltaB);
+                TargetAcc = (ByteAcc) setofAcc.get(0);
                 break;
             }
-            case 2:
-            {
-                TargetAcc = (IntAcc)setofAcc.get(1);
+            case 2: {
+                if(mode == 2)
+                {
+                    TargetAcc.accumulate(1);
+                }else{
+                    log+= TargetAcc.accumulate(2)+"\n";
+                }
+                TargetAcc.setDeltaI(deltaI);
+                TargetAcc = (IntAcc) setofAcc.get(1);
                 break;
             }
-            case 3:
-            {
-                TargetAcc = (StringAcc)setofAcc.get(2);
+            case 3: {
+                if (mode==3)
+                {
+                    TargetAcc.accumulate(1);
+                }
+                else{
+                    log += str + " (x"+TargetAcc.accumulate(2)+")\n";
+                }
+                TargetAcc.setStr(str);
+                TargetAcc = (StringAcc) setofAcc.get(2);
                 break;
             }
             default:
             {
-
+                switch(mode)
+                {
+                    case 1:
+                    {
+                        TargetAcc = (ByteAcc) setofAcc.get(1);
+                        TargetAcc.setDeltaB(deltaB);
+                        break;
+                    }
+                    case 2:
+                    {
+                        TargetAcc = (IntAcc) setofAcc.get(1);
+                        TargetAcc.setDeltaI(deltaI);
+                        break;
+                    }
+                    case 3:
+                    {
+                        TargetAcc = (StringAcc) setofAcc.get(1);
+                        TargetAcc.setStr(str);
+                        break;
+                    }
+                }
+                //TargetAcc.accumulate(0);
             }
         }
-        changeState(mode);
+        //endregion
+
+        setState(mode);
     }
-    private void changeState(int mode)
+    private void setState(int mode)
     {
         this.mode = mode;
     }
 
     public void end() {
+        log+=TargetAcc.accumulate(2);
         sav = new ConsoleSaver(log);
         sav.save();
         setofAcc.clear();
