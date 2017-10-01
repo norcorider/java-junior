@@ -30,14 +30,7 @@ public class Logger {
             System.out.println(string);
 
     }
-    public static void log(int[] arr)
-    {
-        System.out.print(PRIMArr+"{");
-        for (int i = 0; i < arr.length-1; i++) {
-            System.out.print(arr[i]+", ");
-        }
-        System.out.println(arr[arr.length-1]+"}");
-    }
+
 
 
     public static void log(byte foramlMessage) {
@@ -263,7 +256,14 @@ public class Logger {
         IntegerBOUND=0;
         ByteBOUND=0;
     }
-
+    public static void log(int[] arr)
+    {
+        System.out.print(PRIMArr+"{");
+        for (int i = 0; i < arr.length-1; i++) {
+            System.out.print(arr[i]+", ");
+        }
+        System.out.println(arr[arr.length-1]+"}");
+    }
     private static void printMV(int maxValue) {
         System.out.println(maxValue+"");
     }
