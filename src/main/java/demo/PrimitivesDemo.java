@@ -1,4 +1,4 @@
-package demo;
+/*package demo;
 
 public strictfp class PrimitivesDemo {
     public strictfp static void main(String[] args) {
@@ -72,3 +72,4 @@ public strictfp class PrimitivesDemo {
         System.out.println(.1 + .2); //+ type overflow
     }
 }
+*/

@@ -6,6 +6,12 @@ public class Logger {
     public static int globalState = 0;
     public int instanceState = 0;
 
+    private  Accumulator currentAccumulator
+    private final Accumulator byteAcumulator;
+    private final Accumulator stringAccumulator;
+
+    public LoggerController(Accumulator byteAcumulator, Accumulator stringAccumulator)
+
 
     public static int state = 0;//0,1,2,3,4
 
