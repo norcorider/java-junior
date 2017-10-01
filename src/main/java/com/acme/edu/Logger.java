@@ -6,13 +6,6 @@ public class Logger {
     public static int globalState = 0;
     public int instanceState = 0;
 
-    private  Accumulator currentAccumulator
-    private final Accumulator byteAcumulator;
-    private final Accumulator stringAccumulator;
-
-    public LoggerController(Accumulator byteAcumulator, Accumulator stringAccumulator)
-
-
     public static int state = 0;//0,1,2,3,4
 
     public static int sumInt = 0;
@@ -25,8 +18,8 @@ public class Logger {
     public static int EqStringCounter = 0;
 
     public static String ClassName = "";
-    public static final String PRIM= "primitive: ";
     public static final String PRIMArr = "primitives array: ";
+
 
 
     public static void log(byte foramlMessage) {
@@ -152,6 +145,7 @@ public class Logger {
         }
         state = 2;
     }
+
     public static void log(String foramlMessage) {
         switch(state)
         {
@@ -295,6 +289,6 @@ public class Logger {
     }
 
     public static void main(String... args) {
-
+        Logger.log(new int[]{1,0,-1});
     }
 }
