@@ -106,17 +106,9 @@ public strictfp class PrimitivesDemo {
         System.out.println(!b1);
         System.out.println(1 == 2);  // > = = =
 
-        Cat cat1 = new Cat(1);
-        Cat cat2 = new Cat(1);
-        cat1.equals(cat2); // = = =
 
         System.out.println( isB1() ? 1 : isB2() ? "1" : 2);
 
-        cat1 = null;
-        if (cat1 != null) {
-            System.out.println(cat1.getId());
-        }
-        Optional<Cat> maybeCat = Optional.empty();
 //        fopen("cdf") or die()
         //endregion
         //endregion
@@ -150,6 +142,7 @@ public strictfp class PrimitivesDemo {
         return false;
     }
 }
+
 
 class Cat extends Object {
     private int id;

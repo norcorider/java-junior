@@ -1,14 +1,13 @@
 package ooaddemo;
 
 
-public class Logger {
+final class Logger {
     //Creator
-    private LoggerFilter filter = new MessageContentLoggerFilter();
-    @Autowired
-    private LoggerSaver saver;
+    private final LoggerFilter filter = new MessageContentLoggerFilter();
+    private final LoggerSaver saver;
 
     //Dependency Injection: constructor | setter
-    public Logger(LoggerSaver saver) {
+    public Logger(final LoggerSaver saver) {
         this.saver = saver;
     }
 
@@ -16,7 +15,7 @@ public class Logger {
      * OCP: Open Closed Principle
      * DIP: Dependency Inversion Principle
      */
-    public void log(String message) {
+    public final void log(String message) {
         if (!filter.filter(message)) {
             saver.save(message);
         }
