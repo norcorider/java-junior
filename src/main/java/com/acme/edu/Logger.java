@@ -316,7 +316,6 @@ public class Logger {
         LoggerFacade.log("saasf");
         LoggerFacade.log("saasf");
         LoggerFacade.log("saasf");
-        LoggerFacade.log("saa11sf1");
         LoggerFacade.log((byte)1);
         LoggerFacade.log((byte)-1);
         LoggerFacade.log((byte)-1);
@@ -326,6 +325,7 @@ public class Logger {
         LoggerFacade.log("saasf");
         LoggerFacade.log("saasf");
         LoggerFacade.log("saasf");
+        LoggerFacade.log("saa11sf1");
         LoggerFacade.log("saa11sf1");
         LoggerFacade.close();
     }
