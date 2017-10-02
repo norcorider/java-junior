@@ -1,6 +1,6 @@
-package com.acme.edu;
+package com.acme.edu.PController.interfaces;
 
-import com.acme.edu.interfaces.format.LoggerFormat;
+import com.acme.edu.PController.interfaces.format.LoggerFormat;
 
 public class StandartFormating implements LoggerFormat {
     public int state;

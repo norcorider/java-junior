@@ -1,6 +1,6 @@
-package com.acme.edu;
+package com.acme.edu.PController.interfaces;
 
-import com.acme.edu.interfaces.save.LoggerSaver;
+import com.acme.edu.PController.interfaces.save.LoggerSaver;
 
 public class ConsoleSaver implements LoggerSaver {
     private String log;

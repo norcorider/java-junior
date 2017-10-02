@@ -1,4 +1,4 @@
-package com.acme.edu.interfaces.save;
+package com.acme.edu.PController.interfaces.save;
 
 public interface LoggerSaver {
 

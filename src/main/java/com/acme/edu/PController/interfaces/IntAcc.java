@@ -1,12 +1,15 @@
-package com.acme.edu;
+package com.acme.edu.PController.interfaces;
 
-import com.acme.edu.interfaces.accumulate.LoggerAccumulate;
+import com.acme.edu.PController.interfaces.accumulate.LoggerAccumulate;
 
 public class IntAcc extends LoggerAccumulate {
-    public static int sum = 0;
+
 
     @Override
     public String accumulate(int mode) {
+        sumB = 0;
+        countS = 0;
+        deltaB = 0;
         switch (mode)
         {
             /*case 0:
@@ -16,13 +19,13 @@ public class IntAcc extends LoggerAccumulate {
             }*/
             case 1:
             {
-                sum+=deltaI;
+                sumI+=deltaI;
                 break;
             }
             case 2:
             {
-                int tmp = (sum+deltaI);
-                sum = 0;
+                int tmp = (sumI+deltaI);
+                sumI = 0;
                 return ""+tmp;
             }
 
