@@ -3,7 +3,7 @@ package com.acme.edu.PController.interfaces;
 import com.acme.edu.PController.interfaces.accumulate.LoggerAccumulate;
 
 public class ByteAcc extends LoggerAccumulate {
-    //public static byte sum = 0;
+    //publi c static byte sum = 0;
     @Override
     public String accumulate(int mode) {
         sumI=0;

@@ -1,6 +1,6 @@
 package com.acme.edu;
 
-import com.acme.edu.PController.interfaces.LoggerFacade;
+import com.acme.edu.PSmartMessage.LoggerFacade;
 
 public class Logger {
     public static final String MY_SUPER_CONSTANT = "";
@@ -292,41 +292,53 @@ public class Logger {
 
     public static void main(String... args) {
 
-        LoggerFacade.log(1);
-        LoggerFacade.log(5);
-        LoggerFacade.log(6);
-        LoggerFacade.log(1);
-        LoggerFacade.log(5);
-        LoggerFacade.log(6);
-        LoggerFacade.log(1);
-        LoggerFacade.log(5);
-        LoggerFacade.log(6);
-        LoggerFacade.log((byte)1);
-        LoggerFacade.log((byte)-1);
-        LoggerFacade.log((byte)-1);
-        LoggerFacade.log((byte)1);
-        LoggerFacade.log((byte)-1);
-        LoggerFacade.log((byte)-1);
-        LoggerFacade.log(1);
-        LoggerFacade.log(5);
-        LoggerFacade.log(6);
-        LoggerFacade.log(1);
-        LoggerFacade.log(5);
-        LoggerFacade.log(6);
-        LoggerFacade.log("saasf");
-        LoggerFacade.log("saasf");
-        LoggerFacade.log("saasf");
-        LoggerFacade.log("saa11sf1");
-        LoggerFacade.log((byte)1);
-        LoggerFacade.log((byte)-1);
-        LoggerFacade.log((byte)-1);
-        LoggerFacade.log(1);
-        LoggerFacade.log(5);
+        //LoggerFacade.log(Integer.MAX_VALUE);
+        //LoggerFacade.log(Integer.MIN_VALUE);
+        LoggerFacade.log("SSSS1");
+        LoggerFacade.log("SSSS1");
+        LoggerFacade.log("SSSS1");
+        LoggerFacade.log("SSSS1");
+        //LoggerFacade.log(Integer.MAX_VALUE);
+        //LoggerFacade.log(Integer.MIN_VALUE);
+        LoggerFacade.log("SSSS");
+        LoggerFacade.log("SSSS");
+        LoggerFacade.log("SSSS1");
+        LoggerFacade.log("SSSS1");
+        LoggerFacade.log(10);
+        //LoggerFacade.log(Integer.MAX_VALUE);
+        //LoggerFacade.log(Integer.MIN_VALUE);
         LoggerFacade.log(7);
-        LoggerFacade.log("saasf");
-        LoggerFacade.log("saasf");
-        LoggerFacade.log("saasf");
-        LoggerFacade.log("saa11sf1");
+        LoggerFacade.log("SSSS1");
+        LoggerFacade.log("SSSS1");
+        LoggerFacade.log("SSSS1");
+        LoggerFacade.log("SSSS1");
+        LoggerFacade.log("SSSS");
+        LoggerFacade.log("SSSS");
+        LoggerFacade.log("SSSS1");
+        LoggerFacade.log("SSSS1");
+        LoggerFacade.log((byte)10);
+        //LoggerFacade.log(Integer.MAX_VALUE);
+        //LoggerFacade.log(Integer.MIN_VALUE);
+        LoggerFacade.log("SSSS1");
+        //LoggerFacade.log(Integer.MAX_VALUE);
+        //LoggerFacade.log(Integer.MIN_VALUE);
+        LoggerFacade.log((byte)4);
+        LoggerFacade.log("SSSS1");
+        LoggerFacade.log(10);
+        LoggerFacade.log("SSSS1");
+        LoggerFacade.log(7);
+        LoggerFacade.log((byte)10);
+        //LoggerFacade.log(Integer.MAX_VALUE);
+        //LoggerFacade.log(Integer.MIN_VALUE);
+        LoggerFacade.log((byte)4);
+        LoggerFacade.log("SSSS1");
+        LoggerFacade.log("SSSS1");
+        LoggerFacade.log("SSSS1");
+        LoggerFacade.log("SSSS1");
+        LoggerFacade.log("SSSS");
+        LoggerFacade.log("SSSS");
+        LoggerFacade.log("SSSS1");
+        LoggerFacade.log("SSSS1");
         LoggerFacade.close();
     }
 }

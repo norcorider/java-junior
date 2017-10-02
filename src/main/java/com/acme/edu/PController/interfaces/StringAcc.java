@@ -3,7 +3,8 @@ package com.acme.edu.PController.interfaces;
 import com.acme.edu.PController.interfaces.accumulate.LoggerAccumulate;
 
 public class StringAcc extends LoggerAccumulate {
-    //public static int count = 0;
+    public String str;
+
     @Override
     public String accumulate(int mode) {
         sumB = 0;
@@ -24,7 +25,7 @@ public class StringAcc extends LoggerAccumulate {
             }
             case 2:
             {
-                int tmp = ++countS;
+                int tmp = countS;
                 countS = 0;
                 return ""+tmp;
             }

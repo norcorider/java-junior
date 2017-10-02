@@ -85,7 +85,15 @@ public class LoggerController {
             case 3: {
                 if (mode==3)
                 {
-                    TargetAcc.accumulate(1);
+                    if(TargetAcc.equals(str))
+                        TargetAcc.accumulate(1);
+                    else{
+                        if(TargetAcc.getCountS() > 1)
+                            log += str + " (x"+TargetAcc.accumulate(2)+")\n";
+                        else
+                            log += str;
+                        TargetAcc.setStr(str);
+                    }
                 }
                 else if(mode == 1){
                     log += str + " (x"+TargetAcc.accumulate(2)+")\n";
