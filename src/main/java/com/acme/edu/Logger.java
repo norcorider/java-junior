@@ -22,7 +22,6 @@ public class Logger {
 
 
 
-
     public static void log(byte foramlMessage) {
         switch(state)
         {
@@ -290,6 +289,32 @@ public class Logger {
     }
 
     public static void main(String... args) {
-        Logger.log(new int[]{1,0,-1});
+
+        LoggerFacade.log(1);
+        LoggerFacade.log(5);
+        LoggerFacade.log(6);
+        LoggerFacade.log(1);
+        LoggerFacade.log(5);
+        LoggerFacade.log(6);
+        LoggerFacade.log(1);
+        LoggerFacade.log(5);
+        LoggerFacade.log(6);
+        LoggerFacade.log((byte)1);
+        LoggerFacade.log((byte)-1);
+        LoggerFacade.log((byte)-1);
+        LoggerFacade.log((byte)1);
+        LoggerFacade.log((byte)-1);
+        LoggerFacade.log((byte)-1);
+        LoggerFacade.log(1);
+        LoggerFacade.log(5);
+        LoggerFacade.log(6);
+        LoggerFacade.log((byte)1);
+        LoggerFacade.log((byte)-1);
+        LoggerFacade.log((byte)-1);
+        LoggerFacade.log(1);
+        LoggerFacade.log(5);
+        LoggerFacade.log(6);
+        LoggerFacade.log("saasf");
+        LoggerFacade.close();
     }
 }
