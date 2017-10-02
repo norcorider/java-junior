@@ -1,4 +1,4 @@
-package com.acme.edu;
+package com.acme.edu.PController.interfaces;
 
 public class LoggerFacade {
     public static LoggerController controller

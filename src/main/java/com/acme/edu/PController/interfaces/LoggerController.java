@@ -1,11 +1,10 @@
-package com.acme.edu;
+package com.acme.edu.PController.interfaces;
 
-import com.acme.edu.interfaces.accumulate.LoggerAccumulate;
-import com.acme.edu.interfaces.format.LoggerFormat;
-import com.acme.edu.interfaces.save.LoggerSaver;
+import com.acme.edu.PController.interfaces.accumulate.LoggerAccumulate;
+import com.acme.edu.PController.interfaces.format.LoggerFormat;
+import com.acme.edu.PController.interfaces.save.LoggerSaver;
 
 import java.util.ArrayList;
-import java.util.Map;
 
 public class LoggerController {
 
@@ -60,8 +59,10 @@ public class LoggerController {
                 if(mode == 1)
                 {
                     TargetAcc.accumulate(1);
-                }else{
+                }else if(mode == 2){
                     log += TargetAcc.accumulate(2)+"\n";
+                }else if (mode == 3) {
+                    log+= TargetAcc.accumulate(2)+"\n";
                 }
                 TargetAcc.setDeltaB(deltaB);
                 TargetAcc = (ByteAcc) setofAcc.get(0);
@@ -71,7 +72,10 @@ public class LoggerController {
                 if(mode == 2)
                 {
                     TargetAcc.accumulate(1);
-                }else{
+                }else if(mode == 3){
+                    log += TargetAcc.accumulate(2)+"\n";
+                }else if(mode == 1)
+                {
                     log+= TargetAcc.accumulate(2)+"\n";
                 }
                 TargetAcc.setDeltaI(deltaI);
@@ -83,8 +87,10 @@ public class LoggerController {
                 {
                     TargetAcc.accumulate(1);
                 }
-                else{
+                else if(mode == 1){
                     log += str + " (x"+TargetAcc.accumulate(2)+")\n";
+                } else if(mode == 2) {
+                    log += TargetAcc.accumulate(2)+"\n";
                 }
                 TargetAcc.setStr(str);
                 TargetAcc = (StringAcc) setofAcc.get(2);
@@ -96,7 +102,7 @@ public class LoggerController {
                 {
                     case 1:
                     {
-                        TargetAcc = (ByteAcc) setofAcc.get(1);
+                        TargetAcc = (ByteAcc) setofAcc.get(0);
                         TargetAcc.setDeltaB(deltaB);
                         break;
                     }
@@ -108,7 +114,7 @@ public class LoggerController {
                     }
                     case 3:
                     {
-                        TargetAcc = (StringAcc) setofAcc.get(1);
+                        TargetAcc = (StringAcc) setofAcc.get(2);
                         TargetAcc.setStr(str);
                         break;
                     }
@@ -126,7 +132,29 @@ public class LoggerController {
     }
 
     public void end() {
-        log+=TargetAcc.accumulate(2);
+        switch(this.mode)
+        {
+            case 1:
+            {
+                TargetAcc = (ByteAcc) setofAcc.get(0);
+                log+=TargetAcc.accumulate(2);
+                break;
+            }
+            case 2:
+            {
+                TargetAcc = (IntAcc) setofAcc.get(1);
+                log+=TargetAcc.accumulate(2);
+                break;
+            }
+            case 3:
+            {
+                TargetAcc = (StringAcc) setofAcc.get(2);
+                log+=str + " (x" + TargetAcc.accumulate(2)+")\n";
+                break;
+            }
+        }
+
+
         sav = new ConsoleSaver(log);
         sav.save();
         setofAcc.clear();

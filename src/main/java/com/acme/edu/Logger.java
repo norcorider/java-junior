@@ -1,5 +1,7 @@
 package com.acme.edu;
 
+import com.acme.edu.PController.interfaces.LoggerFacade;
+
 public class Logger {
     public static final String MY_SUPER_CONSTANT = "";
 
@@ -308,13 +310,23 @@ public class Logger {
         LoggerFacade.log(1);
         LoggerFacade.log(5);
         LoggerFacade.log(6);
+        LoggerFacade.log(1);
+        LoggerFacade.log(5);
+        LoggerFacade.log(6);
+        LoggerFacade.log("saasf");
+        LoggerFacade.log("saasf");
+        LoggerFacade.log("saasf");
+        LoggerFacade.log("saa11sf1");
         LoggerFacade.log((byte)1);
         LoggerFacade.log((byte)-1);
         LoggerFacade.log((byte)-1);
         LoggerFacade.log(1);
         LoggerFacade.log(5);
-        LoggerFacade.log(6);
+        LoggerFacade.log(7);
         LoggerFacade.log("saasf");
+        LoggerFacade.log("saasf");
+        LoggerFacade.log("saasf");
+        LoggerFacade.log("saa11sf1");
         LoggerFacade.close();
     }
 }

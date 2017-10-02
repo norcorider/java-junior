@@ -1,9 +1,14 @@
-package com.acme.edu.interfaces.accumulate;
+package com.acme.edu.PController.interfaces.accumulate;
 
 public class LoggerAccumulate {
     protected byte deltaB;
     protected int deltaI;
+
+
     protected String str;
+    public static byte sumB = 0;
+    public static int sumI = 0;
+    public static int countS = 0;
 
     public void setDeltaB(byte deltaB) {
         this.deltaB = deltaB;
