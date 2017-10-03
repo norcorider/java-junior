@@ -209,7 +209,7 @@ public class Logger {
         IntegerBOUND=0;
         ByteBOUND=0;
     }
-    public static void log(int[] arr) {
+    public static void log(int[] arr)                                    {
         System.out.print(PRIMArr+"{");
         for (int i = 0; i < arr.length-1; i++) {
             System.out.print(arr[i]+", ");
