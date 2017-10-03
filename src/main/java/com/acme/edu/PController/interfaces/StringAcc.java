@@ -11,20 +11,17 @@ public class StringAcc extends LoggerAccumulate {
         sumI = 0;
         deltaB = 0;
         deltaI = 0;
-        switch(mode)
-        {
+        switch(mode) {
             /*case 0:
             {
                 count = 1;
                 break;
             }*/
-            case 1:
-            {
+            case 1: {
                 countS++;
                 break;
             }
-            case 2:
-            {
+            case 2: {
                 int tmp = countS;
                 countS = 0;
                 return ""+tmp;

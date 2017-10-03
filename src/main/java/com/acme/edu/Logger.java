@@ -25,12 +25,9 @@ public class Logger {
 
 
     public static void log(byte foramlMessage) {
-        switch(state)
-        {
-            case 1://byte
-            {
-                if(ByteBOUND!=0)
-                {
+        switch(state) {
+            case 1: { //byte
+                if(ByteBOUND!=0) {
                     if(sumByte!=Byte.MAX_VALUE & sumByte!=Byte.MIN_VALUE)
                         System.out.println((byte)(sumByte - ByteBOUND));
                     System.out.println(ByteBOUND);
@@ -40,10 +37,8 @@ public class Logger {
                 sumByte += foramlMessage;
                 break;
             }
-            case 2://integer
-            {
-                if(IntegerBOUND!=0)
-                {
+            case 2: { //integer
+                if(IntegerBOUND!=0) {
                     System.out.println(sumInt - IntegerBOUND);
                     System.out.println(IntegerBOUND);
                     IntegerBOUND = 0;
@@ -55,8 +50,7 @@ public class Logger {
                 sumByte = foramlMessage;
                 break;
             }
-            case 3://string
-            {
+            case 3: { //string
                 if(EqStringCounter>1)
                     System.out.println(resultString+" (x"+EqStringCounter+")");
                 else
@@ -65,20 +59,16 @@ public class Logger {
                 sumByte=foramlMessage;
                 break;
             }
-            default://start
-            {
+            default: { //start
                 sumByte=foramlMessage;
             }
         }
-        switch (foramlMessage)
-        {
-            case Byte.MAX_VALUE:
-            {
+        switch (foramlMessage) {
+            case Byte.MAX_VALUE: {
                 ByteBOUND = Byte.MAX_VALUE;
                 break;
             }
-            case Byte.MIN_VALUE:
-            {
+            case Byte.MIN_VALUE: {
                 ByteBOUND = Byte.MIN_VALUE;
                 break;
             }
@@ -87,12 +77,9 @@ public class Logger {
 
     }
     public static void log(int foramlMessage) {
-        switch(state)
-        {
-            case 1://byte
-            {
-                if(ByteBOUND!=0)
-                {
+        switch(state) {
+            case 1: { //byte
+                if(ByteBOUND!=0) {
                     System.out.println((byte)(sumByte - ByteBOUND));
                     System.out.println(ByteBOUND);
                     ByteBOUND = 0;
@@ -104,10 +91,8 @@ public class Logger {
                 sumInt = foramlMessage;
                 break;
             }
-            case 2://Integer
-            {
-                if(IntegerBOUND!=0)
-                {
+            case 2: { //Integer
+                if(IntegerBOUND!=0) {
                     if(sumInt!=Integer.MAX_VALUE & sumInt!=Integer.MIN_VALUE)
                         System.out.println(sumInt - IntegerBOUND);
                     System.out.println(IntegerBOUND);
@@ -117,8 +102,7 @@ public class Logger {
                 sumInt+=foramlMessage;
                 break;
             }
-            case 3://string
-            {
+            case 3: { //string
                 if(EqStringCounter>1)
                     System.out.println(resultString+" (x"+EqStringCounter+")");
                 else
@@ -127,20 +111,16 @@ public class Logger {
                 sumInt = foramlMessage;
                 break;
             }
-            default://start
-            {
+            default: { //start
                 sumInt = foramlMessage;
             }
         }
-        switch (foramlMessage)
-        {
-            case Integer.MAX_VALUE:
-            {
+        switch (foramlMessage) {
+            case Integer.MAX_VALUE: {
                 IntegerBOUND = Integer.MAX_VALUE;
                 break;
             }
-            case Integer.MIN_VALUE:
-            {
+            case Integer.MIN_VALUE: {
                 IntegerBOUND = Integer.MIN_VALUE;
                 break;
             }
@@ -149,12 +129,9 @@ public class Logger {
     }
 
     public static void log(String foramlMessage) {
-        switch(state)
-        {
-            case 1://byte
-            {
-                if(ByteBOUND!=0)
-                {
+        switch(state) {
+            case 1: { //byte
+                if(ByteBOUND!=0) {
                     System.out.println((byte)(sumByte - ByteBOUND));
                     System.out.println((byte)ByteBOUND);
                     ByteBOUND = 0;
@@ -167,16 +144,13 @@ public class Logger {
                 EqStringCounter = 1;
                 break;
             }
-            case 2://Integer
-            {
-                if(IntegerBOUND!=0)
-                {
+            case 2: { //Integer
+                if(IntegerBOUND!=0) {
                     System.out.println(sumInt - IntegerBOUND);
                     System.out.println(IntegerBOUND);
                     IntegerBOUND = 0;
                 }
-                else
-                {
+                else {
                     System.out.println(sumInt+"");
                 }
                 sumInt=0;
@@ -184,19 +158,15 @@ public class Logger {
                 EqStringCounter = 1;
                 break;
             }
-            case 3://string
-            {
-                if(resultString.equals(foramlMessage))
-                {
+            case 3: { //string
+                if(resultString.equals(foramlMessage)) {
                     EqStringCounter++;
                 }
-                else
-                {
+                else {
                     if(EqStringCounter>1) {
                         System.out.println(resultString + " (x" + EqStringCounter + ")");
                     }
-                    else
-                    {
+                    else {
                         System.out.println(resultString);
                     }
                     resultString = foramlMessage;
@@ -204,8 +174,7 @@ public class Logger {
                 }
                 break;
             }
-            default://start
-            {
+            default: { //start
                 resultString = foramlMessage;
                 EqStringCounter = 1;
             }
@@ -213,27 +182,20 @@ public class Logger {
         state = 3;
     }
     public static void close() {
-        switch(state)
-        {
-            case 1:
-            {
-
+        switch(state) {
+            case 1: {
                 System.out.println((byte)sumByte);
                 break;
             }
-            case 2:
-            {
-
+            case 2: {
                 System.out.println(sumInt);
                 break;
             }
-            case 3:
-            {
+            case 3: {
                 if(EqStringCounter>1) {
                     System.out.println(resultString + " (x" + EqStringCounter + ")");
                 }
-                else
-                {
+                else {
                     System.out.println(resultString);
                 }
                 break;
@@ -247,8 +209,7 @@ public class Logger {
         IntegerBOUND=0;
         ByteBOUND=0;
     }
-    public static void log(int[] arr)
-    {
+    public static void log(int[] arr) {
         System.out.print(PRIMArr+"{");
         for (int i = 0; i < arr.length-1; i++) {
             System.out.print(arr[i]+", ");

@@ -10,20 +10,17 @@ public class IntAcc extends LoggerAccumulate {
         sumB = 0;
         countS = 0;
         deltaB = 0;
-        switch (mode)
-        {
+        switch (mode) {
             /*case 0:
             {
                 sum = deltaI;
                 break;
             }*/
-            case 1:
-            {
+            case 1: {
                 sumI+=deltaI;
                 break;
             }
-            case 2:
-            {
+            case 2: {
                 int tmp = (sumI+deltaI);
                 sumI = 0;
                 return ""+tmp;

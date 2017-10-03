@@ -134,14 +134,12 @@ public class LoggerController {
 
         setState(mode);
     }
-    private void setState(int mode)
-    {
+    private void setState(int mode) {
         this.mode = mode;
     }
 
     public void end() {
-        switch(this.mode)
-        {
+        switch(this.mode) {
             case 1:
             {
                 TargetAcc = (ByteAcc) setofAcc.get(0);
