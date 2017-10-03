@@ -1,6 +1,7 @@
 package com.acme.edu.iteration02;
 
 import com.acme.edu.Logger;
+import com.acme.edu.PSmartMessage.LoggerFacade;
 import com.acme.edu.SysoutCaptureAndAssertionAbility;
 import org.junit.After;
 import org.junit.Before;
@@ -48,12 +49,12 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
     @Test
     public void shouldLogCorrectlyIntegerOverflowWhenSequentIntegers() {
         //region when
-        Logger.log("str 1");
-        Logger.log(10);
-        Logger.log(Integer.MAX_VALUE);
-        Logger.log("str 2");
-        Logger.log(0);
-        Logger.close();
+        LoggerFacade.log("str 1");
+        LoggerFacade.log(10);
+        LoggerFacade.log(Integer.MAX_VALUE);
+        LoggerFacade.log("str 2");
+        LoggerFacade.log(0);
+        LoggerFacade.close();
         //endregion
 
         //region then
@@ -70,12 +71,12 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
     @Test
     public void shouldLogCorrectlyByteOverflowWhenSequentBytes() {
         //region when
-        Logger.log("str 1");
-        Logger.log((byte)10);
-        Logger.log((byte)Byte.MAX_VALUE);
-        Logger.log("str 2");
-        Logger.log(0);
-        Logger.close();
+        LoggerFacade.log("str 1");
+        LoggerFacade.log((byte)10);
+        LoggerFacade.log((byte)Byte.MAX_VALUE);
+        LoggerFacade.log("str 2");
+        LoggerFacade.log(0);
+        LoggerFacade.close();
         //endregion
 
         //region then
@@ -92,15 +93,15 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
     @Test
     public void shouldLogSameSubsequentStringsWithoutRepeat() throws IOException {
         //region when
-        Logger.log("str 1");
-        Logger.log("str 2");
-        Logger.log("str 2");
-        Logger.log(0);
-        Logger.log("str 2");
-        Logger.log("str 3");
-        Logger.log("str 3");
-        Logger.log("str 3");
-        Logger.close();
+        LoggerFacade.log("str 1");
+        LoggerFacade.log("str 2");
+        LoggerFacade.log("str 2");
+        LoggerFacade.log(0);
+        LoggerFacade.log("str 2");
+        LoggerFacade.log("str 3");
+        LoggerFacade.log("str 3");
+        LoggerFacade.log("str 3");
+        LoggerFacade.close();
         //endregion
 
         //region then

@@ -1,6 +1,6 @@
 package com.acme.edu.PController.interfaces.accumulate;
 
-public class LoggerAccumulate {
+public abstract class LoggerAccumulate {
     protected byte deltaB;
     protected int deltaI;
 
@@ -9,6 +9,10 @@ public class LoggerAccumulate {
     public static byte sumB = 0;
     public static int sumI = 0;
     public static int countS = 0;
+
+    public static int getCountS() {
+        return countS;
+    }
 
     public void setDeltaB(byte deltaB) {
         this.deltaB = deltaB;
@@ -22,8 +26,5 @@ public class LoggerAccumulate {
         this.str = str;
     }
 
-    public String accumulate(int mode)
-    {
-        return null;
-    }
+    public abstract String accumulate(int mode);
 }
