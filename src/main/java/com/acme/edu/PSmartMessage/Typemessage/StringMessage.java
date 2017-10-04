@@ -28,12 +28,23 @@ public class StringMessage extends Message {
                 }
                 case 1:
                 {
+                    if(((ByteMessage)m).getDelta() == Byte.MAX_VALUE |
+                            ((ByteMessage)m).getDelta() == Byte.MIN_VALUE)
+                    {
+                        sum = 1;
+                        return "";
+                    }
                     String result = ""+m.sum;
                     sum = 1;
                     return result;
                 }
-                case 2:
-                {
+                case 2: {
+                    if (((IntMessage) m).getDelta() == Integer.MAX_VALUE |
+                            ((IntMessage) m).getDelta() == Integer.MIN_VALUE)
+                    {
+                        sum = 1;
+                        return "";
+                    }
                     String result = ""+m.sum;
                     sum = 1;
                     return result;

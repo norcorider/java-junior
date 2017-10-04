@@ -41,14 +41,11 @@ public abstract class LoggerController {
     {
         msg.setM(oldMsg);
         String tmp = msg.iteration(classmode);
-        if(!tmp.equals("")) {
+        if(!tmp.equals(""))
             log += tmp + "\n";
-            msg.clearM();
-            SetOldMessage(msg);
-        }else {
-            msg.clearM();
-            SetOldMessage(msg);
-        }
+
+        msg.clearM();
+        SetOldMessage(msg);
         changemode(msg);
 
     }

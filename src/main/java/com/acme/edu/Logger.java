@@ -298,8 +298,14 @@ public class Logger {
         LoggerFacade.log("SSSS1");
         LoggerFacade.log("SSSS1");
         LoggerFacade.log("SSSS1");
-        //LoggerFacade.log(Integer.MAX_VALUE);
-        //LoggerFacade.log(Integer.MIN_VALUE);
+        LoggerFacade.log(Integer.MAX_VALUE);
+        LoggerFacade.log(Integer.MIN_VALUE);
+        LoggerFacade.log(Integer.MAX_VALUE);
+        LoggerFacade.log(Byte.MAX_VALUE);
+        LoggerFacade.log(Byte.MIN_VALUE);
+        LoggerFacade.log(Integer.MIN_VALUE);
+        LoggerFacade.log(Integer.MAX_VALUE);
+        LoggerFacade.log(Integer.MIN_VALUE);
         LoggerFacade.log("SSSS");
         LoggerFacade.log("SSSS");
         LoggerFacade.log("SSSS1");
@@ -310,6 +316,11 @@ public class Logger {
         LoggerFacade.log(7);
         LoggerFacade.log("SSSS1");
         LoggerFacade.log("SSSS1");
+        LoggerFacade.log(Byte.MAX_VALUE);
+        LoggerFacade.log(Byte.MIN_VALUE);
+
+        LoggerFacade.log(Byte.MAX_VALUE);
+        LoggerFacade.log(Byte.MIN_VALUE);
         LoggerFacade.log("SSSS1");
         LoggerFacade.log("SSSS1");
         LoggerFacade.log("SSSS");
@@ -317,6 +328,8 @@ public class Logger {
         LoggerFacade.log("SSSS1");
         LoggerFacade.log("SSSS1");
         LoggerFacade.log((byte)10);
+        LoggerFacade.log(Byte.MAX_VALUE);
+        LoggerFacade.log(Byte.MIN_VALUE);
         //LoggerFacade.log(Integer.MAX_VALUE);
         //LoggerFacade.log(Integer.MIN_VALUE);
         LoggerFacade.log("SSSS1");
@@ -327,6 +340,8 @@ public class Logger {
         LoggerFacade.log(10);
         LoggerFacade.log("SSSS1");
         LoggerFacade.log(7);
+        LoggerFacade.log(Byte.MAX_VALUE);
+        LoggerFacade.log(Byte.MIN_VALUE);
         LoggerFacade.log((byte)10);
         //LoggerFacade.log(Integer.MAX_VALUE);
         //LoggerFacade.log(Integer.MIN_VALUE);
