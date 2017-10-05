@@ -17,26 +17,67 @@ public class ByteMessage extends Message {
                 break;
             }
             case 1: {
-                /*if((long)delta+m.sum>=Byte.MAX_VALUE |
-                        (long)delta+m.sum<=Byte.MIN_VALUE)
-                {
-                    return ""+m.sum+"\n"+ delta;
-                }*/
-                sum = delta + m.sum;
-                break;
+                if(getDelta() == Byte.MAX_VALUE |
+                        getDelta() == Byte.MIN_VALUE) {
+                    if (((ByteMessage) m).getDelta() == Byte.MAX_VALUE |
+                            ((ByteMessage) m).getDelta() == Byte.MIN_VALUE) {
+                        sum = 0;
+                        return "" + delta;
+                    } else {
+                        sum = 0;
+                        return "" + m.sum + "\n" + delta;
+                    }
+                }
+                else {
+                    sum = delta + m.sum;
+                    break;
+                }
             }
             case 2: {
-                String result = "" + m.sum;
-                sum = delta;
-                return result;
+                if(((IntMessage)m).getDelta() == Integer.MAX_VALUE |
+                        ((IntMessage)m).getDelta() == Integer.MIN_VALUE)
+                {
+                    if(getDelta() == Byte.MAX_VALUE |
+                            getDelta() == Byte.MIN_VALUE)
+                    {
+                        sum = 0;
+                        return ""+getDelta();
+                    }else {
+                        sum = delta;
+                        return "";
+                    }
+                }
+                else
+                {
+                    if(getDelta() == Byte.MAX_VALUE |
+                            getDelta() == Byte.MIN_VALUE)
+                    {
+                        sum = 0;
+                        return ""+m.sum +"\n"+getDelta();
+                    }else {
+                        String result = "" + m.sum;
+                        sum = delta;
+                        return result;
+                    }
+                }
             }
             case 3: {
-                String result = ((StringMessage) m).getStr() + " (x" + m.sum + ")";
-                sum = delta;
-                return result;
+                if(getDelta() == Byte.MAX_VALUE |
+                        getDelta() == Byte.MIN_VALUE) {
+                    return ((StringMessage) m).getStr() + " (x" + m.sum + ")\n"+delta;
+                }
+                else {
+                    String result = ((StringMessage) m).getStr() + " (x" + m.sum + ")";
+                    sum = delta;
+                    return result;
+                }
             }
         }
         //}
         return "";
+    }
+
+    public byte getDelta() {
+        return delta;
     }
 }
