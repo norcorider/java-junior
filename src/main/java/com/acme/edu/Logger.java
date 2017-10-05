@@ -16,39 +16,37 @@ public class Logger {
     public static byte sumByte = 0;
     public static byte ByteBOUND = 0;
 
-    public static String resultString="";
+    public static String resultString = "";
     public static int EqStringCounter = 0;
 
     public static String ClassName = "";
     public static final String PRIMArr = "primitives array: ";
 
-
+    public Logger() {
+        throw new RuntimeException();
+    }
 
     public static void log(byte foramlMessage) {
-        switch(state)
-        {
+        switch (state) {
             case 1://byte
             {
-                if(ByteBOUND!=0)
-                {
-                    if(sumByte!=Byte.MAX_VALUE & sumByte!=Byte.MIN_VALUE)
-                        System.out.println((byte)(sumByte - ByteBOUND));
+                if (ByteBOUND != 0) {
+                    if (sumByte != Byte.MAX_VALUE & sumByte != Byte.MIN_VALUE)
+                        System.out.println((byte) (sumByte - ByteBOUND));
                     System.out.println(ByteBOUND);
                     ByteBOUND = 0;
-                    sumByte=0;
+                    sumByte = 0;
                 }
                 sumByte += foramlMessage;
                 break;
             }
             case 2://integer
             {
-                if(IntegerBOUND!=0)
-                {
+                if (IntegerBOUND != 0) {
                     System.out.println(sumInt - IntegerBOUND);
                     System.out.println(IntegerBOUND);
                     IntegerBOUND = 0;
-                }
-                else{
+                } else {
                     System.out.println(sumInt);
                 }
                 sumInt = 0;
@@ -57,28 +55,25 @@ public class Logger {
             }
             case 3://string
             {
-                if(EqStringCounter>1)
-                    System.out.println(resultString+" (x"+EqStringCounter+")");
+                if (EqStringCounter > 1)
+                    System.out.println(resultString + " (x" + EqStringCounter + ")");
                 else
                     System.out.println(resultString);
                 EqStringCounter = 0;
-                sumByte=foramlMessage;
+                sumByte = foramlMessage;
                 break;
             }
             default://start
             {
-                sumByte=foramlMessage;
+                sumByte = foramlMessage;
             }
         }
-        switch (foramlMessage)
-        {
-            case Byte.MAX_VALUE:
-            {
+        switch (foramlMessage) {
+            case Byte.MAX_VALUE: {
                 ByteBOUND = Byte.MAX_VALUE;
                 break;
             }
-            case Byte.MIN_VALUE:
-            {
+            case Byte.MIN_VALUE: {
                 ByteBOUND = Byte.MIN_VALUE;
                 break;
             }
@@ -86,18 +81,16 @@ public class Logger {
         state = 1;
 
     }
+
     public static void log(int foramlMessage) {
-        switch(state)
-        {
+        switch (state) {
             case 1://byte
             {
-                if(ByteBOUND!=0)
-                {
-                    System.out.println((byte)(sumByte - ByteBOUND));
+                if (ByteBOUND != 0) {
+                    System.out.println((byte) (sumByte - ByteBOUND));
                     System.out.println(ByteBOUND);
                     ByteBOUND = 0;
-                }
-                else{
+                } else {
                     System.out.println(sumByte);
                 }
                 sumByte = 0;
@@ -106,21 +99,20 @@ public class Logger {
             }
             case 2://Integer
             {
-                if(IntegerBOUND!=0)
-                {
-                    if(sumInt!=Integer.MAX_VALUE & sumInt!=Integer.MIN_VALUE)
+                if (IntegerBOUND != 0) {
+                    if (sumInt != Integer.MAX_VALUE & sumInt != Integer.MIN_VALUE)
                         System.out.println(sumInt - IntegerBOUND);
                     System.out.println(IntegerBOUND);
                     IntegerBOUND = 0;
-                    sumInt=0;
+                    sumInt = 0;
                 }
-                sumInt+=foramlMessage;
+                sumInt += foramlMessage;
                 break;
             }
             case 3://string
             {
-                if(EqStringCounter>1)
-                    System.out.println(resultString+" (x"+EqStringCounter+")");
+                if (EqStringCounter > 1)
+                    System.out.println(resultString + " (x" + EqStringCounter + ")");
                 else
                     System.out.println(resultString);
                 EqStringCounter = 0;
@@ -132,15 +124,12 @@ public class Logger {
                 sumInt = foramlMessage;
             }
         }
-        switch (foramlMessage)
-        {
-            case Integer.MAX_VALUE:
-            {
+        switch (foramlMessage) {
+            case Integer.MAX_VALUE: {
                 IntegerBOUND = Integer.MAX_VALUE;
                 break;
             }
-            case Integer.MIN_VALUE:
-            {
+            case Integer.MIN_VALUE: {
                 IntegerBOUND = Integer.MIN_VALUE;
                 break;
             }
@@ -149,17 +138,14 @@ public class Logger {
     }
 
     public static void log(String foramlMessage) {
-        switch(state)
-        {
+        switch (state) {
             case 1://byte
             {
-                if(ByteBOUND!=0)
-                {
-                    System.out.println((byte)(sumByte - ByteBOUND));
-                    System.out.println((byte)ByteBOUND);
+                if (ByteBOUND != 0) {
+                    System.out.println((byte) (sumByte - ByteBOUND));
+                    System.out.println((byte) ByteBOUND);
                     ByteBOUND = 0;
-                }
-                else {
+                } else {
                     System.out.println(sumByte + "");
                 }
                 sumByte = 0;
@@ -169,34 +155,26 @@ public class Logger {
             }
             case 2://Integer
             {
-                if(IntegerBOUND!=0)
-                {
+                if (IntegerBOUND != 0) {
                     System.out.println(sumInt - IntegerBOUND);
                     System.out.println(IntegerBOUND);
                     IntegerBOUND = 0;
+                } else {
+                    System.out.println(sumInt + "");
                 }
-                else
-                {
-                    System.out.println(sumInt+"");
-                }
-                sumInt=0;
-                resultString=foramlMessage;
+                sumInt = 0;
+                resultString = foramlMessage;
                 EqStringCounter = 1;
                 break;
             }
             case 3://string
             {
-                if(resultString.equals(foramlMessage))
-                {
+                if (resultString.equals(foramlMessage)) {
                     EqStringCounter++;
-                }
-                else
-                {
-                    if(EqStringCounter>1) {
+                } else {
+                    if (EqStringCounter > 1) {
                         System.out.println(resultString + " (x" + EqStringCounter + ")");
-                    }
-                    else
-                    {
+                    } else {
                         System.out.println(resultString);
                     }
                     resultString = foramlMessage;
@@ -212,59 +190,55 @@ public class Logger {
         }
         state = 3;
     }
-    public static void close() {
-        switch(state)
-        {
-            case 1:
-            {
 
-                System.out.println((byte)sumByte);
+    public static void close() {
+        switch (state) {
+            case 1: {
+
+                System.out.println((byte) sumByte);
                 break;
             }
-            case 2:
-            {
+            case 2: {
 
                 System.out.println(sumInt);
                 break;
             }
-            case 3:
-            {
-                if(EqStringCounter>1) {
+            case 3: {
+                if (EqStringCounter > 1) {
                     System.out.println(resultString + " (x" + EqStringCounter + ")");
-                }
-                else
-                {
+                } else {
                     System.out.println(resultString);
                 }
                 break;
             }
         }
         state = 0;
-        sumInt=0;
-        sumByte=0;
-        resultString="";
-        EqStringCounter=0;
-        IntegerBOUND=0;
-        ByteBOUND=0;
+        sumInt = 0;
+        sumByte = 0;
+        resultString = "";
+        EqStringCounter = 0;
+        IntegerBOUND = 0;
+        ByteBOUND = 0;
     }
-    public static void log(int[] arr)
-    {
-        System.out.print(PRIMArr+"{");
-        for (int i = 0; i < arr.length-1; i++) {
-            System.out.print(arr[i]+", ");
+
+    public static void log(int[] arr) {
+        System.out.print(PRIMArr + "{");
+        for (int i = 0; i < arr.length - 1; i++) {
+            System.out.print(arr[i] + ", ");
         }
-        System.out.println(arr[arr.length-1]+"}");
+        System.out.println(arr[arr.length - 1] + "}");
     }
+
     private static void printMV(int maxValue) {
-        System.out.println(maxValue+"");
+        System.out.println(maxValue + "");
     }
 
     public static void log(char foramlMessage) {
         String etalon = (new Character(foramlMessage)).getClass().toString();
-        if(!ClassName.equals(etalon)) {
+        if (!ClassName.equals(etalon)) {
             ClassName = etalon;
             System.out.println("char: \r\n" + foramlMessage);
-        }else {
+        } else {
             System.out.println(foramlMessage);
         }
     }
@@ -272,29 +246,51 @@ public class Logger {
 
     public static void log(Object obj) {
         String etalon = obj.getClass().toString();
-        if(!ClassName.equals(etalon)) {
+        if (!ClassName.equals(etalon)) {
             ClassName = etalon;
             System.out.println("reference: \r\n" + '@');
-        }else {
+        } else {
             System.out.println('@');
         }
     }
 
     public static void log(boolean foramlMessage) {
         String etalon = new Boolean(foramlMessage).getClass().toString();
-        if(!ClassName.equals(etalon)) {
+        if (!ClassName.equals(etalon)) {
             ClassName = etalon;
             System.out.println("primitive: \r\n" + foramlMessage);
-        }else {
+        } else {
             System.out.println(foramlMessage);
         }
     }
 
+    public void m()
+    {
+
+    }
     public static void main(String... args) {
 
         Integer d1 = 111;
         Integer d2 = 111;
         System.out.println(d1 == d2);
+
+        Logger file = null;
+        try{
+            file = new Logger();
+        }
+        catch(Exception e)
+        {
+            throw new RuntimeException("123123",e);
+        }
+        finally{
+            try {
+                file.m();
+            }catch(NullPointerException n)
+            {
+                throw n;
+            }
+        }
+
         /*
         //LoggerFacade.log(Integer.MAX_VALUE);
         //LoggerFacade.log(Integer.MIN_VALUE);

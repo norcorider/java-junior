@@ -1,5 +1,6 @@
 package com.acme.edu.PSmartMessage.Typemessage;
 
+import com.acme.edu.PSmartMessage.Exceptions.OutofIntegerBoundException;
 import com.acme.edu.PSmartMessage.interfacesAndabstracts.save.Message;
 
 public class IntMessage extends Message {
@@ -14,7 +15,7 @@ public class IntMessage extends Message {
     }
 
     @Override
-    public String iteration(int classmode) {
+    public String iteration(int classmode) throws OutofIntegerBoundException {
 
         switch(classmode)
         {
@@ -66,7 +67,10 @@ public class IntMessage extends Message {
                     }
                 }
                 else {
-                    sum = delta + m.sum;
+                    if((int)delta + m.sum>Byte.MAX_VALUE | (int)delta + m.sum<Byte.MIN_VALUE)
+                        throw new OutofIntegerBoundException("OUT OF BYTE BOUND!!!");
+                    else
+                        sum = delta + m.sum;
                     break;
                 }
             }
