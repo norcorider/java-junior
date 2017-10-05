@@ -74,10 +74,18 @@ public class IntMessage extends Message {
             {
                 if(getDelta() == Integer.MAX_VALUE |
                         getDelta() == Integer.MIN_VALUE) {
-                    return ((StringMessage) m).getStr() + " (x" + m.sum + ")\n"+delta;
+                    if(m.sum>1)
+                        return ((StringMessage) m).getStr() + " (x" + m.sum + ")";
+                    else
+                        return ((StringMessage) m).getStr();
                 }
                 else {
-                    String result = ((StringMessage) m).getStr() + " (x" + m.sum + ")";
+                    String result;
+                    if(m.sum>1)
+                        result = ((StringMessage) m).getStr() + " (x" + m.sum + ")";
+                    else
+                        result = ((StringMessage) m).getStr();
+                    //((StringMessage) m).getStr() + " (x" + m.sum + ")";
                     sum = delta;
                     return result;
                 }
