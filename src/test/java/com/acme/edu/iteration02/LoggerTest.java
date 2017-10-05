@@ -28,20 +28,20 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
     @Test
     public void shouldLogSequentIntegersAsSum() throws IOException {
         //region when
-        Logger.log("str 1");
-        Logger.log(1);
-        Logger.log(2);
-        Logger.log("str 2");
-        Logger.log(0);
-        Logger.close();
+        LoggerFacade.log("str 1");
+        LoggerFacade.log(1);
+        LoggerFacade.log(2);
+        LoggerFacade.log("str 2");
+        LoggerFacade.log(0);
+        LoggerFacade.close();
         //endregion
 
         //region then
         assertSysoutContains(
-            "str 1\r\n" +
-            "3\r\n" +
-            "str 2\r\n" +
-            "0\r\n"
+            "str 1\n" +
+            "3\n" +
+            "str 2\n" +
+            "0"
         );
         //endregion
     }
@@ -63,7 +63,7 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
             "10\r\n" +
             Integer.MAX_VALUE + "\n" +
             "str 2\n" +
-            "0\n"
+            "0"
         );
         //endregion
     }
@@ -81,11 +81,11 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
 
         //region then
         assertSysoutContains(
-            "str 1\r\n" +
-            "10\r\n" +
-            Byte.MAX_VALUE + "\r\n" +
-            "str 2\r\n" +
-            "0\r\n"
+            "str 1\n" +
+            "10\n" +
+            Byte.MAX_VALUE + "\n" +
+            "str 2\n" +
+            "0"
         );
         //endregion
     }
@@ -106,11 +106,11 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
 
         //region then
         assertSysoutContains(
-            "str 1\r\n" +
-            "str 2 (x2)\r\n" +
-            "0\r\n" +
-            "str 2\r\n" +
-            "str 3 (x3)\r\n"
+            "str 1\n" +
+            "str 2 (x2)\n" +
+            "0\n" +
+            "str 2\n" +
+            "str 3 (x3)"
         );
         //endregion
     }

@@ -292,6 +292,10 @@ public class Logger {
 
     public static void main(String... args) {
 
+        Integer d1 = 111;
+        Integer d2 = 111;
+        System.out.println(d1 == d2);
+        /*
         //LoggerFacade.log(Integer.MAX_VALUE);
         //LoggerFacade.log(Integer.MIN_VALUE);
         LoggerFacade.log("SSSS1");
@@ -354,6 +358,6 @@ public class Logger {
         LoggerFacade.log("SSSS");
         LoggerFacade.log("SSSS1");
         LoggerFacade.log("SSSS1");
-        LoggerFacade.close();
+        LoggerFacade.close();*/
     }
 }
