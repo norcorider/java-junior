@@ -254,6 +254,7 @@ public class Logger {
 
     public static void main(String... args) {
 
+
         //LoggerFacade.log(Integer.MAX_VALUE);
         //LoggerFacade.log(Integer.MIN_VALUE);
         LoggerFacade.log("SSSS1");
@@ -287,6 +288,7 @@ public class Logger {
         LoggerFacade.log(Byte.MIN_VALUE);
         //LoggerFacade.log(Integer.MAX_VALUE);
         //LoggerFacade.log(Integer.MIN_VALUE);
+        LoggerFacade.close();
 
     }
 }

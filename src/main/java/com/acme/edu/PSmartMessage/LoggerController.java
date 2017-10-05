@@ -72,10 +72,10 @@ public abstract class LoggerController {
     {
         if(oldMsg instanceof ByteMessage || oldMsg instanceof IntMessage)
         {
-            log+=oldMsg.getSum()+"\n";
+            log+=oldMsg.getSum();//+"\n";
         }else if(oldMsg instanceof StringMessage)
         {
-            log+= ((StringMessage) oldMsg).getStr() + " (x"+oldMsg.getSum()+")\n";
+            log+= ((StringMessage) oldMsg).getStr() + " (x"+oldMsg.getSum()+")";//\n";
         }
 
         saver = new ConsoleSaver(log);
