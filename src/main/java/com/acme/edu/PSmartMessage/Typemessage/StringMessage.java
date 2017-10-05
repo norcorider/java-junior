@@ -58,7 +58,10 @@ public class StringMessage extends Message {
                     }
                     else {
                         sum = 1;
-                        return ((StringMessage) m).getStr() + " (x" + m.sum + ")";
+                        if(m.sum>1)
+                            return ((StringMessage) m).getStr() + " (x" + m.sum + ")";
+                        else
+                            return ((StringMessage) m).getStr();
                     }
                 }
             }

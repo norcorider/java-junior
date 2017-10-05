@@ -64,10 +64,18 @@ public class ByteMessage extends Message {
             case 3: {
                 if(getDelta() == Byte.MAX_VALUE |
                         getDelta() == Byte.MIN_VALUE) {
-                    return ((StringMessage) m).getStr() + " (x" + m.sum + ")\n"+delta;
+                    if(m.sum>1)
+                        return ((StringMessage) m).getStr() + " (x" + m.sum + ")";
+                    else
+                        return ((StringMessage) m).getStr();
                 }
                 else {
-                    String result = ((StringMessage) m).getStr() + " (x" + m.sum + ")";
+                    String result;
+                    if(m.sum>1)
+                        result = ((StringMessage) m).getStr() + " (x" + m.sum + ")";
+                    else
+                        result = ((StringMessage) m).getStr();
+                    //String result = ((StringMessage) m).getStr() + " (x" + m.sum + ")";
                     sum = delta;
                     return result;
                 }

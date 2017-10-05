@@ -59,11 +59,11 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
 
         //region then
         assertSysoutContains(
-            "str 1\r\n" +
+            "str 1\n" +
             "10\r\n" +
-            Integer.MAX_VALUE + "\r\n" +
-            "str 2\r\n" +
-            "0\r\n"
+            Integer.MAX_VALUE + "\n" +
+            "str 2\n" +
+            "0\n"
         );
         //endregion
     }
