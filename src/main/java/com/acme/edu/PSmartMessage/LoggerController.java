@@ -89,15 +89,17 @@ public abstract class LoggerController {
     {
         if(oldMsg instanceof ByteMessage || oldMsg instanceof IntMessage)
         {
-            log+=oldMsg.getSum();//+"\n";
+            log+=oldMsg.getSum() +"\n";
         }else if(oldMsg instanceof StringMessage)
         {
             if(oldMsg.getSum()>1)
-                log+= ((StringMessage) oldMsg).getStr() + " (x"+oldMsg.getSum()+")";
+                log+= ((StringMessage) oldMsg).getStr() + " (x"+oldMsg.getSum()+")"+"\n";
             else
-                log+= ((StringMessage) oldMsg).getStr();
+                log+= ((StringMessage) oldMsg).getStr() + "\n";
         }
-
+        else
+            {
+            }
         //saver = new FileSaver();
         //saver = new ConsoleSaver(log);
         ((ConsoleSaver)saver).setLog(log);

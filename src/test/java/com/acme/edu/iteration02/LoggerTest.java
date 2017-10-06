@@ -60,7 +60,7 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
         //region then
         assertSysoutContains(
             "str 1\n" +
-            "10\r\n" +
+            "10\n" +
             Integer.MAX_VALUE + "\n" +
             "str 2\n" +
             "0\n"
