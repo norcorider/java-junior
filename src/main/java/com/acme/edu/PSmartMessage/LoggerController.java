@@ -21,13 +21,13 @@ public abstract class LoggerController {
     public static long sum;
     public Message oldMsg;
 
-    public LoggerController()
+    public LoggerController(LoggerSaver sav)
     {
         log ="";
         classmode = 0;
         sum = 0;
         oldMsg=null;
-
+        saver = sav;
     }
 
     public void SetOldMessage(Message old)
@@ -99,7 +99,8 @@ public abstract class LoggerController {
         }
 
         //saver = new FileSaver();
-        saver = new ConsoleSaver(log);
+        //saver = new ConsoleSaver(log);
+        ((ConsoleSaver)saver).setLog(log);
         try {
             saver.save();
         } catch (LoggerSaverException e) {

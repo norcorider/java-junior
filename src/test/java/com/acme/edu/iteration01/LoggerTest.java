@@ -1,6 +1,7 @@
 package com.acme.edu.iteration01;
 
 import com.acme.edu.Logger;
+import com.acme.edu.PSmartMessage.LoggerFacade;
 import com.acme.edu.SysoutCaptureAndAssertionAbility;
 import org.junit.After;
 import org.junit.Before;
@@ -27,10 +28,10 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
     public void shouldLogInteger() throws IOException {
 
         //region when
-        Logger.log(-1);
-        Logger.log(2);
-        Logger.log(3);
-        Logger.close();
+        LoggerFacade.log(-1);
+        LoggerFacade.log(2);
+        LoggerFacade.log(3);
+        LoggerFacade.close();
         //endregion
 
 

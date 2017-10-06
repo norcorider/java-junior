@@ -8,7 +8,7 @@ import com.acme.edu.PSmartMessage.interfacesAndabstracts.save.Message;
 
 public class LoggerFacade {
     public static LoggerController controller
-            = new SHALoggerController();
+            = new SHALoggerController(new ConsoleSaver());
     /*public static Message im = new IntMessage(0);
     public static Message bm = new ByteMessage((byte)0);
     public static Message sm = new StringMessage("");*/
