@@ -253,7 +253,7 @@ public class Logger {
 
 
                     public void m(){
-                        
+
                     }
 
                     public static void main (String...args){
