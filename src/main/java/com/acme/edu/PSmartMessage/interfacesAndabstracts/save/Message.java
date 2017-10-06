@@ -1,5 +1,9 @@
 package com.acme.edu.PSmartMessage.interfacesAndabstracts.save;
 
+import com.acme.edu.PSmartMessage.Exceptions.OutofByteBoundException;
+import com.acme.edu.PSmartMessage.Exceptions.OutofIntegerBoundException;
+import com.acme.edu.PSmartMessage.Exceptions.OutofTypeBoundException;
+
 public abstract class Message {
     public long sum = 0;
     public Message m;
@@ -15,5 +19,5 @@ public abstract class Message {
 
     protected Message(){}
 
-    public abstract String iteration(int classmode);//одна строка лога
+    public abstract String iteration(int classmode) throws OutofTypeBoundException, OutofByteBoundException, OutofIntegerBoundException;//одна строка лога
 }

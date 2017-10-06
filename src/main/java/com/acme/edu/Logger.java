@@ -16,13 +16,15 @@ public class Logger {
     public static byte sumByte = 0;
     public static byte ByteBOUND = 0;
 
-    public static String resultString="";
+    public static String resultString = "";
     public static int EqStringCounter = 0;
 
     public static String ClassName = "";
     public static final String PRIMArr = "primitives array: ";
 
-
+    public Logger() {
+        throw new RuntimeException();
+    }
 
     public static void log(byte foramlMessage) {
         switch(state) {
@@ -32,7 +34,7 @@ public class Logger {
                         System.out.println((byte)(sumByte - ByteBOUND));
                     System.out.println(ByteBOUND);
                     ByteBOUND = 0;
-                    sumByte=0;
+                    sumByte = 0;
                 }
                 sumByte += foramlMessage;
                 break;
@@ -42,8 +44,7 @@ public class Logger {
                     System.out.println(sumInt - IntegerBOUND);
                     System.out.println(IntegerBOUND);
                     IntegerBOUND = 0;
-                }
-                else{
+                } else {
                     System.out.println(sumInt);
                 }
                 sumInt = 0;
@@ -56,7 +57,7 @@ public class Logger {
                 else
                     System.out.println(resultString);
                 EqStringCounter = 0;
-                sumByte=foramlMessage;
+                sumByte = foramlMessage;
                 break;
             }
             default: { //start
@@ -76,6 +77,7 @@ public class Logger {
         state = 1;
 
     }
+
     public static void log(int foramlMessage) {
         switch(state) {
             case 1: { //byte
@@ -83,8 +85,7 @@ public class Logger {
                     System.out.println((byte)(sumByte - ByteBOUND));
                     System.out.println(ByteBOUND);
                     ByteBOUND = 0;
-                }
-                else{
+                } else {
                     System.out.println(sumByte);
                 }
                 sumByte = 0;
@@ -97,9 +98,9 @@ public class Logger {
                         System.out.println(sumInt - IntegerBOUND);
                     System.out.println(IntegerBOUND);
                     IntegerBOUND = 0;
-                    sumInt=0;
+                    sumInt = 0;
                 }
-                sumInt+=foramlMessage;
+                sumInt += foramlMessage;
                 break;
             }
             case 3: { //string
@@ -135,8 +136,7 @@ public class Logger {
                     System.out.println((byte)(sumByte - ByteBOUND));
                     System.out.println((byte)ByteBOUND);
                     ByteBOUND = 0;
-                }
-                else {
+                } else {
                     System.out.println(sumByte + "");
                 }
                 sumByte = 0;
@@ -149,9 +149,8 @@ public class Logger {
                     System.out.println(sumInt - IntegerBOUND);
                     System.out.println(IntegerBOUND);
                     IntegerBOUND = 0;
-                }
-                else {
-                    System.out.println(sumInt+"");
+                } else {
+                    System.out.println(sumInt + "");
                 }
                 sumInt=0;
                 resultString=foramlMessage;
@@ -181,114 +180,136 @@ public class Logger {
         }
         state = 3;
     }
+
     public static void close() {
         switch(state) {
             case 1: {
-                System.out.println((byte)sumByte);
+                System.out.println((byte) sumByte);
                 break;
             }
             case 2: {
-                System.out.println(sumInt);
-                break;
-            }
-            case 3: {
-                if(EqStringCounter>1) {
-                    System.out.println(resultString + " (x" + EqStringCounter + ")");
+                        System.out.println(sumInt);
+                        break;
+                    }
+                    case 3: {
+                        if (EqStringCounter > 1) {
+                            System.out.println(resultString + " (x" + EqStringCounter + ")");
+                        } else {
+                                System.out.println(resultString);
+                            }
+                            break;
+                        }
+                    }
+                    state = 0;
+                    sumInt = 0;
+                    sumByte = 0;
+                    resultString = "";
+                    EqStringCounter = 0;
+                    IntegerBOUND = 0;
+                    ByteBOUND = 0;
                 }
-                else {
-                    System.out.println(resultString);
-                }
-                break;
-            }
-        }
-        state = 0;
-        sumInt=0;
-        sumByte=0;
-        resultString="";
-        EqStringCounter=0;
-        IntegerBOUND=0;
-        ByteBOUND=0;
-    }
-    public static void log(int[] arr)                                    {
-        System.out.print(PRIMArr+"{");
-        for (int i = 0; i < arr.length-1; i++) {
-            System.out.print(arr[i]+", ");
-        }
-        System.out.println(arr[arr.length-1]+"}");
-    }
-    private static void printMV(int maxValue) {
-        System.out.println(maxValue+"");
-    }
+                public static void log ( int[] arr){
+                    System.out.print(PRIMArr + "{");
+                    for (int i = 0; i < arr.length - 1; i++) {
+                        System.out.print(arr[i] + ", ");
+                            }
+                            System.out.println(arr[arr.length - 1] + "}");
+                        }
 
-    public static void log(char foramlMessage) {
-        String etalon = (new Character(foramlMessage)).getClass().toString();
-        if(!ClassName.equals(etalon)) {
-            ClassName = etalon;
-            System.out.println("char: \r\n" + foramlMessage);
-        }else {
-            System.out.println(foramlMessage);
-        }
-    }
+                    private static void printMV ( int maxValue){
+                        System.out.println(maxValue + "");
+                    }
+
+                    public static void log ( char foramlMessage){
+                        String etalon = (new Character(foramlMessage)).getClass().toString();
+                        if (!ClassName.equals(etalon)) {
+                            ClassName = etalon;
+                            System.out.println("char: \r\n" + foramlMessage);
+                        } else {
+                            System.out.println(foramlMessage);
+                        }
+                    }
 
 
-    public static void log(Object obj) {
-        String etalon = obj.getClass().toString();
-        if(!ClassName.equals(etalon)) {
-            ClassName = etalon;
-            System.out.println("reference: \r\n" + '@');
-        }else {
-            System.out.println('@');
-        }
-    }
+                    public static void log (Object obj){
+                        String etalon = obj.getClass().toString();
+                        if (!ClassName.equals(etalon)) {
+                            ClassName = etalon;
+                            System.out.println("reference: \r\n" + '@');
+                        } else {
+                            System.out.println('@');
+                        }
+                    }
 
-    public static void log(boolean foramlMessage) {
-        String etalon = new Boolean(foramlMessage).getClass().toString();
-        if(!ClassName.equals(etalon)) {
-            ClassName = etalon;
-            System.out.println("primitive: \r\n" + foramlMessage);
-        }else {
-            System.out.println(foramlMessage);
-        }
-    }
-
-
-    public static void main(String... args) {
+                    public static void log ( boolean foramlMessage){
+                        String etalon = new Boolean(foramlMessage).getClass().toString();
+                        if (!ClassName.equals(etalon)) {
+                            ClassName = etalon;
+                            System.out.println("primitive: \r\n" + foramlMessage);
+                        } else {
+                            System.out.println(foramlMessage);
+                        }
+                    }
 
 
-        //LoggerFacade.log(Integer.MAX_VALUE);
-        //LoggerFacade.log(Integer.MIN_VALUE);
-        LoggerFacade.log("SSSS1");
-        LoggerFacade.log("SSSS1");
-        LoggerFacade.log("SSSS1");
-        LoggerFacade.log(Integer.MAX_VALUE);
-        LoggerFacade.log(Integer.MIN_VALUE);
-        LoggerFacade.log(Integer.MAX_VALUE);
-        LoggerFacade.log(Byte.MAX_VALUE);
-        LoggerFacade.log(Byte.MIN_VALUE);
-        LoggerFacade.log(Integer.MIN_VALUE);
-        LoggerFacade.log(Integer.MAX_VALUE);
-        LoggerFacade.log(Integer.MIN_VALUE);
-        LoggerFacade.log("SSSS");
-        LoggerFacade.log("SSSS");
-        LoggerFacade.log("SSSS1");
-        LoggerFacade.log("SSSS1");
-        LoggerFacade.log("SSSS1");
-        LoggerFacade.log(Byte.MAX_VALUE);
-        LoggerFacade.log(Byte.MIN_VALUE);
-        LoggerFacade.log(Byte.MAX_VALUE);
-        LoggerFacade.log(Byte.MIN_VALUE);
-        LoggerFacade.log("SSSS1");
-        LoggerFacade.log("SSSS1");
-        LoggerFacade.log("SSSS");
-        LoggerFacade.log("SSSS");
-        LoggerFacade.log("SSSS1");
-        LoggerFacade.log("SSSS1");
-        LoggerFacade.log((byte)10);
-        LoggerFacade.log(Byte.MAX_VALUE);
-        LoggerFacade.log(Byte.MIN_VALUE);
-        //LoggerFacade.log(Integer.MAX_VALUE);
-        //LoggerFacade.log(Integer.MIN_VALUE);
-        LoggerFacade.close();
+                    public void m(){
+                        
+                    }
 
-    }
+                    public static void main (String...args){
+
+                        Integer d1 = 111;
+                        Integer d2 = 111;
+                        System.out.println(d1 == d2);
+
+                        Logger file = null;
+                        try {
+                            file = new Logger();
+                        } catch (Exception e) {
+                            throw new RuntimeException("123123", e);
+                        } finally {
+                            try {
+                                file.m();
+                            } catch (NullPointerException n) {
+                                throw n;
+                            }
+                        }
+
+
+                        //LoggerFacade.log(Integer.MAX_VALUE);
+                        //LoggerFacade.log(Integer.MIN_VALUE);
+                        LoggerFacade.log("SSSS1");
+                        LoggerFacade.log("SSSS1");
+                        LoggerFacade.log("SSSS1");
+                        LoggerFacade.log(Integer.MAX_VALUE);
+                        LoggerFacade.log(Integer.MIN_VALUE);
+                        LoggerFacade.log(Integer.MAX_VALUE);
+                        LoggerFacade.log(Byte.MAX_VALUE);
+                        LoggerFacade.log(Byte.MIN_VALUE);
+                        LoggerFacade.log(Integer.MIN_VALUE);
+                        LoggerFacade.log(Integer.MAX_VALUE);
+                        LoggerFacade.log(Integer.MIN_VALUE);
+                        LoggerFacade.log("SSSS");
+                        LoggerFacade.log("SSSS");
+                        LoggerFacade.log("SSSS1");
+                        LoggerFacade.log("SSSS1");
+                        LoggerFacade.log("SSSS1");
+                        LoggerFacade.log(Byte.MAX_VALUE);
+                        LoggerFacade.log(Byte.MIN_VALUE);
+                        LoggerFacade.log(Byte.MAX_VALUE);
+                        LoggerFacade.log(Byte.MIN_VALUE);
+                        LoggerFacade.log("SSSS1");
+                        LoggerFacade.log("SSSS1");
+                        LoggerFacade.log("SSSS");
+                        LoggerFacade.log("SSSS");
+                        LoggerFacade.log("SSSS1");
+                        LoggerFacade.log("SSSS1");
+                        LoggerFacade.log((byte) 10);
+                        LoggerFacade.log(Byte.MAX_VALUE);
+                        LoggerFacade.log(Byte.MIN_VALUE);
+                        //LoggerFacade.log(Integer.MAX_VALUE);
+                        //LoggerFacade.log(Integer.MIN_VALUE);
+                        LoggerFacade.close();
+
+                    }
 }
