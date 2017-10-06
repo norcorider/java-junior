@@ -46,10 +46,10 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
     @Test
     public void shouldLogByte() throws IOException {
         //region when
-        Logger.log((byte) 1);
-        Logger.log((byte) 0);
-        Logger.log((byte) -1);
-        Logger.close();
+        LoggerFacade.log((byte) 1);
+        LoggerFacade.log((byte) 0);
+        LoggerFacade.log((byte) -1);
+        LoggerFacade.close();
         //endregion
 
         //region then
@@ -58,12 +58,13 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
     }
 
 
+
     @Test
     public void shouldLogChar() throws IOException {
         //region when
-        Logger.log('a');
-        Logger.log('b');
-        Logger.close();
+        LoggerFacade.log('a');
+        LoggerFacade.log('b');
+        LoggerFacade.close();
         //endregion
 
         //region then
@@ -76,9 +77,9 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
     @Test
     public void shouldLogString() throws IOException {
         //region when
-        Logger.log("test string 1");
-        Logger.log("other str");
-        Logger.close();
+        LoggerFacade.log("test string 1");
+        LoggerFacade.log("other str");
+        LoggerFacade.close();
         //endregion
 
         //region then
@@ -91,9 +92,9 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
     @Test
     public void shouldLogBoolean() throws IOException {
         //region when
-        Logger.log(true);
-        Logger.log(false);
-        Logger.close();
+        LoggerFacade.log(true);
+        LoggerFacade.log(false);
+        LoggerFacade.close();
         //endregion
 
         //region then
@@ -105,8 +106,8 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
     @Test
     public void shouldLogReference() throws IOException {
         //region when
-        Logger.log(new Object());
-        Logger.close();
+        LoggerFacade.log(new Object());
+        LoggerFacade.close();
         //endregion
 
         //region then
