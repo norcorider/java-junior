@@ -3,6 +3,7 @@ package com.acme.edu;
 import com.acme.edu.PSmartMessage.LoggerFacade;
 
 public class Logger {
+
     public static final String MY_SUPER_CONSTANT = "";
 
     public static int globalState = 0;
@@ -255,7 +256,7 @@ public class Logger {
     public void m(){
 
     }
-    
+
 
     public static void main (String...args){
         /*

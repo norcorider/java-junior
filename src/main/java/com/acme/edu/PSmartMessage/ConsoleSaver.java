@@ -8,6 +8,15 @@ public class ConsoleSaver implements LoggerSaver {
     {
         log = l;
     }
+    public ConsoleSaver()
+    {
+        log = "";
+    }
+
+    public void setLog(String log) {
+        this.log = log;
+    }
+
     @Override
     public void save() {
         System.out.println(log);
