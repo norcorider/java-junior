@@ -280,16 +280,17 @@ public class Logger {
         LoggerFacade.log(-1);
         LoggerFacade.log(2);
         LoggerFacade.log(3);
-        //LoggerFacade.log('a');
-        //LoggerFacade.log('b');
-        //LoggerFacade.close();
+        LoggerFacade.close();
+        LoggerFacade.log('a');
+        LoggerFacade.log('b');
+        LoggerFacade.close();
 
         //endregion
         //region when
         LoggerFacade.log((byte) 1);
         LoggerFacade.log((byte) 0);
         LoggerFacade.log((byte) -1);
-        //LoggerFacade.close();
+        LoggerFacade.close();
         //endregion
         //region when
 
@@ -303,7 +304,7 @@ public class Logger {
 
         LoggerFacade.log('a');
         LoggerFacade.log('b');
-        //LoggerFacade.log(new Object());
+        LoggerFacade.log(new Object());
         LoggerFacade.close();
         //endregion
         //endregion
