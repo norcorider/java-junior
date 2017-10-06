@@ -1,13 +1,8 @@
 package com.acme.edu.PSmartMessage;
 
 import com.acme.edu.Logger;
-import com.acme.edu.PController.interfaces.ByteAcc;
-import com.acme.edu.PController.interfaces.ConsoleSaver;
-import com.acme.edu.PController.interfaces.IntAcc;
-import com.acme.edu.PController.interfaces.StringAcc;
-import com.acme.edu.PController.interfaces.accumulate.LoggerAccumulate;
-import com.acme.edu.PController.interfaces.format.LoggerFormat;
-import com.acme.edu.PController.interfaces.save.LoggerSaver;
+import com.acme.edu.PSmartMessage.interfacesAndabstracts.save.LoggerSaver;
+import com.acme.edu.PSmartMessage.Exceptions.LoggerSaverException;
 import com.acme.edu.PSmartMessage.Exceptions.OutofByteBoundException;
 import com.acme.edu.PSmartMessage.Exceptions.OutofIntegerBoundException;
 import com.acme.edu.PSmartMessage.Typemessage.ByteMessage;
@@ -103,8 +98,13 @@ public abstract class LoggerController {
                 log+= ((StringMessage) oldMsg).getStr();
         }
 
+        //saver = new FileSaver();
         saver = new ConsoleSaver(log);
-        saver.save();
+        try {
+            saver.save();
+        } catch (LoggerSaverException e) {
+            e.printStackTrace();
+        }
     }
     public abstract void encode(String log);
 
