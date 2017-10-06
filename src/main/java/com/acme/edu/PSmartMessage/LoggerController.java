@@ -97,11 +97,11 @@ public abstract class LoggerController {
             else
                 log+= ((StringMessage) oldMsg).getStr() + "\n";
         }
-        else
+        /*else
             {
                 //oldMsg = null;
 
-            }
+            }*/
         //saver = new FileSaver();
         //saver = new ConsoleSaver(log);
         ((ConsoleSaver)saver).setLog(log);
@@ -111,7 +111,10 @@ public abstract class LoggerController {
             e.printStackTrace();
         }
         //
-        log = "";
+        log ="";
+        classmode = 0;
+        sum = 0;
+        oldMsg=null;
     }
     public abstract void encode(String log);
 
