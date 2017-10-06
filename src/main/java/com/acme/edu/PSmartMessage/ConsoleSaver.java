@@ -19,7 +19,7 @@ public class ConsoleSaver implements LoggerSaver {
 
     @Override
     public void save() {
-        //System.out.println();
+        //System.out.close();
         System.out.print(log);
     }
 }
