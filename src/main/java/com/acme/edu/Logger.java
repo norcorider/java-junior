@@ -191,98 +191,98 @@ public class Logger {
                         System.out.println(sumInt);
                         break;
                     }
-                    case 3: {
-                        if (EqStringCounter > 1) {
-                            System.out.println(resultString + " (x" + EqStringCounter + ")");
-                        } else {
-                                System.out.println(resultString);
-                            }
-                            break;
-                        }
-                    }
-                    state = 0;
-                    sumInt = 0;
-                    sumByte = 0;
-                    resultString = "";
-                    EqStringCounter = 0;
-                    IntegerBOUND = 0;
-                    ByteBOUND = 0;
+            case 3: {
+                if (EqStringCounter > 1) {
+                    System.out.println(resultString + " (x" + EqStringCounter + ")");
+                } else {
+                    System.out.println(resultString);
                 }
-                public static void log ( int[] arr){
-                    System.out.print(PRIMArr + "{");
-                    for (int i = 0; i < arr.length - 1; i++) {
-                        System.out.print(arr[i] + ", ");
-                            }
-                            System.out.println(arr[arr.length - 1] + "}");
-                        }
+                break;
+            }
+        }
+        state = 0;
+        sumInt = 0;
+        sumByte = 0;
+        resultString = "";
+        EqStringCounter = 0;
+        IntegerBOUND = 0;
+        ByteBOUND = 0;
+    }
+    public static void log ( int[] arr){
+        System.out.print(PRIMArr + "{");
+        for (int i = 0; i < arr.length - 1; i++) {
+            System.out.print(arr[i] + ", ");
+        }
+        System.out.println(arr[arr.length - 1] + "}");
+    }
 
-                    private static void printMV ( int maxValue){
-                        System.out.println(maxValue + "");
-                    }
+    private static void printMV ( int maxValue){
+        System.out.println(maxValue + "");
+    }
 
-                    public static void log ( char foramlMessage){
-                        String etalon = (new Character(foramlMessage)).getClass().toString();
-                        if (!ClassName.equals(etalon)) {
-                            ClassName = etalon;
-                            System.out.println("char: \r\n" + foramlMessage);
-                        } else {
-                            System.out.println(foramlMessage);
-                        }
-                    }
-
-
-                    public static void log (Object obj){
-                        String etalon = obj.getClass().toString();
-                        if (!ClassName.equals(etalon)) {
-                            ClassName = etalon;
-                            System.out.println("reference: \r\n" + '@');
-                        } else {
-                            System.out.println('@');
-                        }
-                    }
-
-                    public static void log ( boolean foramlMessage){
-                        String etalon = new Boolean(foramlMessage).getClass().toString();
-                        if (!ClassName.equals(etalon)) {
-                            ClassName = etalon;
-                            System.out.println("primitive: \r\n" + foramlMessage);
-                        } else {
-                            System.out.println(foramlMessage);
-                        }
-                    }
+    public static void log ( char foramlMessage){
+        String etalon = (new Character(foramlMessage)).getClass().toString();
+        if (!ClassName.equals(etalon)) {
+            ClassName = etalon;
+            System.out.println("char: \r\n" + foramlMessage);
+        } else {
+            System.out.println(foramlMessage);
+        }
+    }
 
 
-                    public void m(){
+    public static void log (Object obj){
+        String etalon = obj.getClass().toString();
+        if (!ClassName.equals(etalon)) {
+            ClassName = etalon;
+            System.out.println("reference: \r\n" + '@');
+        } else {
+            System.out.println('@');
+        }
+    }
 
-                    }
+    public static void log ( boolean foramlMessage){
+        String etalon = new Boolean(foramlMessage).getClass().toString();
+        if (!ClassName.equals(etalon)) {
+            ClassName = etalon;
+            System.out.println("primitive: \r\n" + foramlMessage);
+        } else {
+            System.out.println(foramlMessage);
+        }
+    }
+
+
+    public void m(){
+
+    }
     
-                    public static void main (String...args){
-/*
-                        Integer d1 = 111;
-                        Integer d2 = 111;
-                        System.out.println(d1 == d2);
 
-                        Logger file = null;
-                        try {
-                            file = new Logger();
-                        } catch (Exception e) {
-                            throw new RuntimeException("123123", e);
-                        } finally {
-                            try {
-                                file.m();
-                            } catch (NullPointerException n) {
-                                throw n;
-                            }
-                        }
-*/
-                        LoggerFacade.log((byte)1);
-                        LoggerFacade.log((byte)120);
-                        LoggerFacade.log((byte)10);
-                        LoggerFacade.log((byte)10);
-                        LoggerFacade.log(10);
-                        LoggerFacade.log(10);
-                        LoggerFacade.log(null);
-                        LoggerFacade.log("asfasf");
-                        LoggerFacade.close();
-                    }
+    public static void main (String...args){
+        /*
+        Integer d1 = 111;
+        Integer d2 = 111;
+        System.out.println(d1 == d2);
+        Logger file = null;
+        try {
+        file = new Logger();
+        } catch (Exception e) {
+        throw new RuntimeException("123123", e);
+        } finally {
+        try {
+        file.m();
+        } catch (NullPointerException n) {
+        throw n;
+        }
+        }
+        */
+        LoggerFacade.log((byte)1);
+        LoggerFacade.log((byte)120);
+        LoggerFacade.log((byte)10);
+        LoggerFacade.log((byte)10);
+        LoggerFacade.log(10);
+        LoggerFacade.log(10);
+        LoggerFacade.log(null);
+        LoggerFacade.log("asfasf");
+        LoggerFacade.close();
+    }
 }
