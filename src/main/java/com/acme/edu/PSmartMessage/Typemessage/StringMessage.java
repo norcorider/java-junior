@@ -1,14 +1,22 @@
 package com.acme.edu.PSmartMessage.Typemessage;
 
+import com.acme.edu.PSmartMessage.Exceptions.MyStringNullException;
 import com.acme.edu.PSmartMessage.interfacesAndabstracts.save.Message;
 
 public class StringMessage extends Message {
 
     public String str;
+    private String s;
 
-    public StringMessage(String s) {
+    public StringMessage(String s) throws MyStringNullException{
         super();
+        if(s == null)
+            throw new MyStringNullException("String is null");
         str=s;
+    }
+
+    public StringMessage(){
+        super();
     }
 
 
@@ -66,5 +74,12 @@ public class StringMessage extends Message {
                 }
             }
             return "";
+    }
+
+    public void setS(String s) {
+        this.str = s;
+    }
+
+    private class StringNullExceptions extends Exception {
     }
 }

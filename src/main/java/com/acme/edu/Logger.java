@@ -2,6 +2,8 @@ package com.acme.edu;
 
 import com.acme.edu.PSmartMessage.LoggerFacade;
 
+import java.net.Socket;
+
 public class Logger {
     public static final String MY_SUPER_CONSTANT = "";
 
@@ -270,6 +272,7 @@ public class Logger {
     }
     public static void main(String... args) {
 
+        /*
         Integer d1 = 111;
         Integer d2 = 111;
         System.out.println(d1 == d2);
@@ -290,7 +293,16 @@ public class Logger {
                 throw n;
             }
         }
-
+        */
+        LoggerFacade.log((byte)1);
+        LoggerFacade.log((byte)120);
+        LoggerFacade.log((byte)10);
+        LoggerFacade.log((byte)10);
+        LoggerFacade.log(10);
+        LoggerFacade.log(10);
+        LoggerFacade.log(null);
+        LoggerFacade.log("asfasf");
+        LoggerFacade.close();
         /*
         //LoggerFacade.log(Integer.MAX_VALUE);
         //LoggerFacade.log(Integer.MIN_VALUE);
