@@ -63,7 +63,7 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
             "10\r\n" +
             Integer.MAX_VALUE + "\n" +
             "str 2\n" +
-            "0"
+            "0\n"
         );
         //endregion
     }

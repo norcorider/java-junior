@@ -1,9 +1,7 @@
 package com.acme.edu.PSmartMessage;
 
 import com.acme.edu.PSmartMessage.Exceptions.MyStringNullException;
-import com.acme.edu.PSmartMessage.Typemessage.ByteMessage;
-import com.acme.edu.PSmartMessage.Typemessage.IntMessage;
-import com.acme.edu.PSmartMessage.Typemessage.StringMessage;
+import com.acme.edu.PSmartMessage.Typemessage.*;
 import com.acme.edu.PSmartMessage.interfacesAndabstracts.save.Message;
 
 public class LoggerFacade {
@@ -36,6 +34,19 @@ public class LoggerFacade {
         }
         controller.loggingProcess(sm);
     }
+    public static void log(char ch)
+    {
+        controller.loggingProcess(new CharMessage(ch));
+    }
+    public static void log(boolean b)
+    {
+        controller.loggingProcess(new BoolMessage(b));
+    }
+    public static void log(Object o)
+    {
+        controller.loggingProcess(new ObjectMessage(o));
+    }
+
 
 
     public static void close()
