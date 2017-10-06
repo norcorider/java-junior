@@ -1,5 +1,6 @@
 package com.acme.edu.PSmartMessage;
 
+import com.acme.edu.PSmartMessage.Exceptions.MyStringNullException;
 import com.acme.edu.PSmartMessage.Typemessage.ByteMessage;
 import com.acme.edu.PSmartMessage.Typemessage.IntMessage;
 import com.acme.edu.PSmartMessage.Typemessage.StringMessage;
@@ -25,8 +26,15 @@ public class LoggerFacade {
     }
     public static void log(String s)
     {
-
-        controller.loggingProcess(new StringMessage(s));
+        StringMessage sm = null;
+        try {
+            sm = new StringMessage(s);
+        }catch(MyStringNullException e)
+        {
+            sm = new StringMessage();
+            sm.setS("defaultstring");
+        }
+        controller.loggingProcess(sm);
     }
 
 

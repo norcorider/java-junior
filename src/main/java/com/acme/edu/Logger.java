@@ -2,6 +2,8 @@ package com.acme.edu;
 
 import com.acme.edu.PSmartMessage.LoggerFacade;
 
+import java.net.Socket;
+
 public class Logger {
     public static final String MY_SUPER_CONSTANT = "";
 
@@ -255,7 +257,7 @@ public class Logger {
                     public void m(){
 
                     }
-
+    
                     public static void main (String...args){
 
                         Integer d1 = 111;
@@ -275,41 +277,14 @@ public class Logger {
                             }
                         }
 
-
-                        //LoggerFacade.log(Integer.MAX_VALUE);
-                        //LoggerFacade.log(Integer.MIN_VALUE);
-                        LoggerFacade.log("SSSS1");
-                        LoggerFacade.log("SSSS1");
-                        LoggerFacade.log("SSSS1");
-                        LoggerFacade.log(Integer.MAX_VALUE);
-                        LoggerFacade.log(Integer.MIN_VALUE);
-                        LoggerFacade.log(Integer.MAX_VALUE);
-                        LoggerFacade.log(Byte.MAX_VALUE);
-                        LoggerFacade.log(Byte.MIN_VALUE);
-                        LoggerFacade.log(Integer.MIN_VALUE);
-                        LoggerFacade.log(Integer.MAX_VALUE);
-                        LoggerFacade.log(Integer.MIN_VALUE);
-                        LoggerFacade.log("SSSS");
-                        LoggerFacade.log("SSSS");
-                        LoggerFacade.log("SSSS1");
-                        LoggerFacade.log("SSSS1");
-                        LoggerFacade.log("SSSS1");
-                        LoggerFacade.log(Byte.MAX_VALUE);
-                        LoggerFacade.log(Byte.MIN_VALUE);
-                        LoggerFacade.log(Byte.MAX_VALUE);
-                        LoggerFacade.log(Byte.MIN_VALUE);
-                        LoggerFacade.log("SSSS1");
-                        LoggerFacade.log("SSSS1");
-                        LoggerFacade.log("SSSS");
-                        LoggerFacade.log("SSSS");
-                        LoggerFacade.log("SSSS1");
-                        LoggerFacade.log("SSSS1");
-                        LoggerFacade.log((byte) 10);
-                        LoggerFacade.log(Byte.MAX_VALUE);
-                        LoggerFacade.log(Byte.MIN_VALUE);
-                        //LoggerFacade.log(Integer.MAX_VALUE);
-                        //LoggerFacade.log(Integer.MIN_VALUE);
+                        LoggerFacade.log((byte)1);
+                        LoggerFacade.log((byte)120);
+                        LoggerFacade.log((byte)10);
+                        LoggerFacade.log((byte)10);
+                        LoggerFacade.log(10);
+                        LoggerFacade.log(10);
+                        LoggerFacade.log(null);
+                        LoggerFacade.log("asfasf");
                         LoggerFacade.close();
-
                     }
 }

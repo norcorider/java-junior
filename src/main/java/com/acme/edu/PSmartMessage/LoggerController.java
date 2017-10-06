@@ -14,6 +14,7 @@ import com.acme.edu.PSmartMessage.Typemessage.ByteMessage;
 import com.acme.edu.PSmartMessage.Typemessage.IntMessage;
 import com.acme.edu.PSmartMessage.Typemessage.StringMessage;
 import com.acme.edu.PSmartMessage.interfacesAndabstracts.save.Message;
+import com.sun.org.apache.xerces.internal.impl.dv.DatatypeException;
 
 import java.util.ArrayList;
 
@@ -59,6 +60,7 @@ public abstract class LoggerController {
             if((long)((IntMessage)msg).getDelta() + oldMsg.sum < Integer.MIN_VALUE) {
                 tmp = Integer.MIN_VALUE + "\n" + ((long) ((IntMessage) msg).getDelta() + oldMsg.sum - Integer.MIN_VALUE);
             }
+
             //e.printStackTrace();
         }
         if(!tmp.equals(""))
