@@ -19,6 +19,6 @@ public class ConsoleSaver implements LoggerSaver {
 
     @Override
     public void save() {
-        System.out.println(log);
+        System.out.print(log);
     }
 }

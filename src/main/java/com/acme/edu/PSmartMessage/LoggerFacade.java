@@ -46,6 +46,10 @@ public class LoggerFacade {
     {
         controller.loggingProcess(new ObjectMessage(o));
     }
+    public static void log(int[] arr)
+    {
+        controller.loggingProcess(new IntArrayMessage(arr));
+    }
 
 
 

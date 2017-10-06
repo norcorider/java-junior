@@ -283,7 +283,7 @@ public class Logger {
         LoggerFacade.log((byte)10);
         LoggerFacade.log(10);
         LoggerFacade.log(10);
-        LoggerFacade.log(null);
+        LoggerFacade.log((String) null);
         LoggerFacade.log("asfasf");
         LoggerFacade.close();
     }
