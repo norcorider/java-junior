@@ -28,11 +28,12 @@ public class LoggerTest implements SysoutCaptureAndAssertionAbility {
     public void shouldLogIntegersArray() throws IOException {
         //region when
         LoggerFacade.log(new int[] {-1, 0, 1});
+        LoggerFacade.close();
         //endregion
 
         //region then
         assertSysoutEquals(
-            "primitives array: {-1, 0, 1}\r\n"
+            "primitives array: {-1, 0, 1}\n"
         );
         //endregion
     }
