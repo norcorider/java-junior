@@ -99,6 +99,8 @@ public abstract class LoggerController {
         }
         else
             {
+                //oldMsg = null;
+
             }
         //saver = new FileSaver();
         //saver = new ConsoleSaver(log);
@@ -108,6 +110,8 @@ public abstract class LoggerController {
         } catch (LoggerSaverException e) {
             e.printStackTrace();
         }
+        //
+        log = "";
     }
     public abstract void encode(String log);
 

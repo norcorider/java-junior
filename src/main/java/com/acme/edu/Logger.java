@@ -277,14 +277,39 @@ public class Logger {
         }
         }
         */
-        LoggerFacade.log((byte)1);
-        LoggerFacade.log((byte)120);
-        LoggerFacade.log((byte)10);
-        LoggerFacade.log((byte)10);
-        LoggerFacade.log(10);
-        LoggerFacade.log(10);
-        LoggerFacade.log((String) null);
-        LoggerFacade.log("asfasf");
+        LoggerFacade.log(-1);
+        LoggerFacade.log(2);
+        LoggerFacade.log(3);
+        //LoggerFacade.log('a');
+        //LoggerFacade.log('b');
+        //LoggerFacade.close();
+
+        //endregion
+        //region when
+        LoggerFacade.log((byte) 1);
+        LoggerFacade.log((byte) 0);
+        LoggerFacade.log((byte) -1);
+        //LoggerFacade.close();
+        //endregion
+        //region when
+
+
+        //LoggerFacade.close();
+        //endregion
+        //region when
+
+        LoggerFacade.log("test string 1");
+        LoggerFacade.log("other str");
+
+        LoggerFacade.log('a');
+        LoggerFacade.log('b');
+        //LoggerFacade.log(new Object());
         LoggerFacade.close();
+        //endregion
+        //endregion
+        //region when
+        //LoggerFacade.log(new Object());
+        //LoggerFacade.close();
+        //endregion
     }
 }
